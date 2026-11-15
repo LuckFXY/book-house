@@ -96,21 +96,24 @@
     }
     $('source-references').showModal();
   }
-  $('source-tools').addEventListener('click', () => { $('source-drawer').open = true; recordPosition(); document.querySelector('.source-header').scrollIntoView({block:'start',behavior:'instant'}); $('line-number').focus({preventScroll:true}); });
   $('close-references').addEventListener('click', () => $('source-references').close());
-  function topLine() {
+  function readingPoint() {
     const top = document.querySelector('.source-context').getBoundingClientRect().bottom;
-    const entries = [...document.querySelectorAll('#source-lines [data-line]')].map(el=>({el,rect:el.getBoundingClientRect()}));
-    const found = entries.find(({rect})=>rect.width>0 && rect.top>=top && rect.bottom<=innerHeight) ??
-      entries.find(({rect})=>rect.width>0 && rect.top>=top && rect.top<innerHeight) ??
-      entries.find(({rect})=>rect.bottom>top && rect.top<innerHeight);
+    return top + (innerHeight - top) * 0.3;
+  }
+  function readingLine() {
+    const point = readingPoint();
+    const entries = [...document.querySelectorAll('#source-lines [data-line]')]
+      .map(el=>({el,rect:el.getBoundingClientRect()})).filter(({rect})=>rect.width>0 && rect.bottom>0 && rect.top<innerHeight);
+    const found = entries.find(({rect})=>rect.top<=point && rect.bottom>point) ??
+      entries.sort((a,b)=>Math.abs(a.rect.top-point)-Math.abs(b.rect.top-point))[0];
     return found ? Number(found.el.dataset.line) : null;
   }
   let positionTimer, bookmarkJump = false;
   function recordPosition() {
     clearTimeout(positionTimer);
-    if (!current || loading || $('source-references').open) return;
-    const line = topLine();
+    if (!current || loading || $('source-references').open || $('source-line-menu').open || (matchMedia('(max-width:900px)').matches && document.body.classList.contains('source-sidebar-open'))) return;
+    const line = readingLine();
     if (!line) return;
     memory.positions[current.bookId] = line; memory.lastBook = current.bookId; persist();
   }
@@ -131,27 +134,46 @@
   }
   function bookmarkButton(line) {
     const button=node('button','☆','source-bookmark-line'); button.type='button'; button.dataset.bookmarkLine=line;
-    button.addEventListener('click',()=>toggleBookmark(line)); return button;
+    button.addEventListener('click',()=>toggleBookmark(Number(button.dataset.bookmarkLine))); return button;
   }
   function nearestRenderedLine(line) {
     return $(`line-${line}`) ?? [...document.querySelectorAll('#source-lines [data-line]')]
       .sort((a,b)=>Math.abs(Number(a.dataset.line)-line)-Math.abs(Number(b.dataset.line)-line))[0];
   }
   function updateBookmarkMarkers() {
-    document.querySelectorAll('[data-bookmark-line]').forEach(button=>{
-      const active=memory.bookmarks.some(item=>item.bookId===current?.bookId && item.line===Number(button.dataset.bookmarkLine));
-      button.textContent=active?'★':'☆'; button.setAttribute('aria-pressed',String(active));
-      button.setAttribute('aria-label',`${active?'删除':'加'}书签 · 第 ${button.dataset.bookmarkLine} 行`);
-    });
-    document.querySelectorAll('.source-bookmark-gutter').forEach(el=>el.remove());
-    if (!current) return;
-    for (const item of memory.bookmarks.filter(item=>item.bookId===current.bookId && item.line>firstChunk*current.chunkSize && item.line<=(lastChunk+1)*current.chunkSize)) {
-      const gutter=nearestRenderedLine(item.line)?.closest('.source-line')?.querySelector('.source-gutter');
-      if (!gutter) continue;
-      const marker=node('a','★','source-bookmark-gutter'); marker.href=`#${hashFor(item.bookId,item.line,item.line)}`;
-      marker.setAttribute('aria-label',`书签 · 第 ${item.line} 行`); gutter.append(marker);
+    const markedBlocks = new Map();
+    if (current) for (const item of memory.bookmarks.filter(item=>item.bookId===current.bookId && item.line>firstChunk*current.chunkSize && item.line<=(lastChunk+1)*current.chunkSize)) {
+      const block=nearestRenderedLine(item.line)?.closest('.source-line');
+      if (block && !markedBlocks.has(block)) markedBlocks.set(block,item.line);
     }
+    document.querySelectorAll('.source-line').forEach(block=>{
+      const button=block.querySelector('.source-bookmark-line'), marked=markedBlocks.get(block);
+      const line=marked??Number(block.dataset.first);
+      button.dataset.bookmarkLine=line;
+      button.textContent=marked?'★':'☆';button.setAttribute('aria-pressed',String(Boolean(marked)));
+      button.classList.toggle('source-bookmark-gutter',Boolean(marked));
+      button.setAttribute('aria-label',`${marked?'删除':'加'}书签 · 第 ${line} 行`);
+    });
   }
+  function updateLineMenu() {
+    const line=Number($('bookmark-menu-line').value);
+    const marked=memory.bookmarks.some(item=>item.bookId===current.bookId&&item.line===line);
+    $('bookmark-menu-toggle').textContent=marked?'删除书签':'加书签';
+    $('bookmark-menu-link').href=`#${hashFor(current.bookId,line,line)}`;
+  }
+  function openLineMenu(block) {
+    const first=Number(block.dataset.first),last=Number(block.dataset.last??first);
+    $('bookmark-menu-line').replaceChildren();
+    for(let line=first;line<=last;line++) {
+      const option=node('option',`第 ${line} 行`);option.value=line;$('bookmark-menu-line').append(option);
+    }
+    const target=range.from>=first&&range.from<=last?range.from:first;
+    $('bookmark-menu-line').value=target;updateLineMenu();$('source-line-menu').showModal();
+  }
+  $('bookmark-menu-line').addEventListener('change',updateLineMenu);
+  $('bookmark-menu-toggle').addEventListener('click',()=>{toggleBookmark(Number($('bookmark-menu-line').value));updateLineMenu();});
+  $('bookmark-menu-link').addEventListener('click',()=>$('source-line-menu').close());
+  $('close-line-menu').addEventListener('click',()=>$('source-line-menu').close());
   function renderBookmarks() {
     const list=$('bookmark-list'); list.replaceChildren();
     if (!memory.bookmarks.length) { list.append(node('p','还没有书签。阅读时点“加书签”保存位置。')); return; }
@@ -163,7 +185,7 @@
         const row=node('div',undefined,'bookmark-item'); row.dataset.bookmarkKey=`${item.bookId}/${item.line}`;
         const jump=node('a',`第 ${item.line} 行${item.scanPage ? ` · 扫描页 ${item.scanPage}`:''} · ${item.snippet}`);
         jump.href=`#${new URLSearchParams({book:item.bookId,from:item.line,to:item.line})}`;
-        jump.addEventListener('click',event=>{event.preventDefault();bookmarkJump=true;route(item.bookId,item.line);});
+        jump.addEventListener('click',event=>{event.preventDefault();if(mobileSidebar.matches)setSidebar(false);bookmarkJump=true;route(item.bookId,item.line);});
         const note=node('input'); note.value=item.note; note.maxLength=60; note.setAttribute('aria-label','书签备注');
         const save=node('button','保存备注'); save.type='button'; save.addEventListener('click',()=>{item.note=shorten(note.value,60); note.value=item.note; persist(); $('source-status').textContent='书签备注已保存。';});
         const remove=node('button','删除'); remove.type='button'; remove.addEventListener('click',()=>{memory.bookmarks=memory.bookmarks.filter(bookmark=>bookmark!==item);persist();renderBookmarks();updateBookmarkMarkers();});
@@ -172,7 +194,7 @@
       list.append(section);
     }
   }
-  $('bookmark-current').addEventListener('click',()=>toggleBookmark(topLine() ?? memory.positions[current?.bookId]));
+  $('bookmark-current').addEventListener('click',()=>toggleBookmark(readingLine() ?? memory.positions[current?.bookId]));
   $('resume-dismiss').addEventListener('click',()=>{$('source-resume').hidden=true;});
   $('resume-start').addEventListener('click',()=>{ $('source-resume').hidden=true; route(current.bookId,1); });
   renderBookmarks();
@@ -183,7 +205,7 @@
     const original = node('span', undefined, 'source-line-text');
     const parts = /^(\s*)(.*?)(\s*)$/.exec(text);
     original.append(node('span', parts[1], 'source-whitespace'), document.createTextNode(parts[2]), node('span', parts[3], 'source-whitespace'));
-    span.append(original,bookmarkButton(number));
+    span.append(original);
     if (current.references.some(ref => number >= ref.lineStart && number <= ref.lineEnd)) {
       const button = node('button', '↗', 'source-reference-marker'); button.type = 'button';
       button.setAttribute('aria-label', `查看引用第 ${number} 行的精读`);
@@ -220,6 +242,9 @@
       block = node('div', undefined, 'source-line');
       const gutter = node('div', undefined, 'source-gutter');
       permalink = node('a', String(number)); permalink.href = `#${hashFor(current.bookId, number, number)}`;
+      const targetBlock=block;
+      permalink.setAttribute('aria-haspopup','dialog');
+      permalink.addEventListener('click',event=>{if(event.button===0&&!event.ctrlKey&&!event.metaKey&&!event.shiftKey&&!event.altKey){event.preventDefault();openLineMenu(targetBlock);}});
       block.dataset.first = number; gutter.append(permalink,bookmarkButton(number));
       content = node('div', undefined, 'source-prose'); block.append(gutter, content); fragment.append(block);
     }
@@ -282,7 +307,7 @@
     $('source-lines').replaceChildren(fragment);
     updateBookmarkMarkers();
   }
-  function centerTarget(atTop = false) {
+  function centerTarget() {
     let target = $(`line-${range.from}`);
     if (!target) {
       target=nearestRenderedLine(range.from);
@@ -291,7 +316,7 @@
       $('source-status').textContent += ` · 原行已隐藏，定位到最近可见的第 ${target.dataset.line} 行。`;
     }
     target.focus({preventScroll:true}); target.scrollIntoView({block:'center',behavior:'instant'});
-    if (atTop) window.scrollBy({top:target.getBoundingClientRect().top-document.querySelector('.source-context').getBoundingClientRect().bottom-2,behavior:'instant'});
+    window.scrollBy({top:target.getBoundingClientRect().top-readingPoint()+1,behavior:'instant'});
   }
   function visibleAnchor() {
     const top = document.querySelector('.source-context').getBoundingClientRect().bottom;
@@ -370,7 +395,10 @@
         }
       }
       if (token !== version) return;
+      const changedBook = current?.bookId !== index.bookId;
       current = index; range = {from, to}; firstChunk = first; lastChunk = last;
+      if(changedBook){searchVersion++;searchResults=[];$('source-search').value='';$('search-results').replaceChildren();$('search-status').textContent='';$('toc-filter').value='';$('search-prev').disabled=$('search-next').disabled=true;}
+
       renderLines();
       $('source-book').value = book; $('line-number').max = index.totalLines; $('line-number').value = from;
       const page = Object.entries(index.pages).filter(([, n]) => n <= from).at(-1)?.[0]; $('scan-page').value = page ?? '';
@@ -388,12 +416,177 @@
         $('resume-label').textContent=`已回到上次阅读位置 · 第 ${from} 行（扫描页 ${pageAt(from) ?? '未标记'}）`;
         $('source-resume').hidden=false;
       }
-      centerTarget(Boolean(resume));
+      centerTarget();
+      if(changedBook)renderToc();
+      trackToc(from);
       if (bookmarkJump) { bookmarkJump=false; setTimeout(()=>{if(token===version)document.querySelectorAll('#source-lines .is-highlighted').forEach(el=>el.classList.remove('is-highlighted'));},2000); }
       memory.lastBook=book; memory.positions[book]=from; persist();
     } catch (error) { if (token === version) $('source-status').textContent = error.message; }
     finally { if (token === version) { loading = false; updateButtons(); } }
   }
+  const mobileSidebar = matchMedia('(max-width:900px)');
+  let sidebarOpener, activeTocId, searchVersion = 0, searchTimer, searchResults = [], searchCursor = -1;
+  const compact = text => text.replace(/\s/gu, '');
+  const sidebarPanels = {toc:'toc-panel',bookmarks:'bookmark-panel',search:'search-panel'};
+  function selectSidebarTab(name) {
+    for (const [key, panel] of Object.entries(sidebarPanels)) {
+      $(panel).hidden = key !== name;
+      $(`${key}-tab`).setAttribute('aria-selected', String(key === name));
+      $(`${key}-tab`).tabIndex = key === name ? 0 : -1;
+    }
+  }
+  function setSidebar(open, name, opener) {
+    if (name) selectSidebarTab(name);
+    if (open) { recordPosition(); sidebarOpener = opener ?? document.activeElement; }
+    document.body.classList.toggle('source-sidebar-open',open);
+    document.body.classList.toggle('source-sidebar-closed',!open);
+    updateSidebarButtons(open);
+    $('sidebar-backdrop').hidden = !open || !mobileSidebar.matches;
+    const modal = open && mobileSidebar.matches;
+    $('source-sidebar').setAttribute('role',modal?'dialog':'complementary');
+    if (modal) $('source-sidebar').setAttribute('aria-modal','true'); else $('source-sidebar').removeAttribute('aria-modal');
+    for (const el of document.querySelectorAll('.source-header,.source-context,.source-main,#source-resume')) el.inert=modal;
+    if (open) (name === 'toc' ? $('toc-filter') : name === 'search' ? $('source-search') : $('bookmarks-tab')).focus({preventScroll:true});
+    else if (sidebarOpener?.isConnected) sidebarOpener.focus({preventScroll:true});
+  }
+  function sidebarJump(line, to = line) {
+    if (mobileSidebar.matches) setSidebar(false);
+    bookmarkJump = true; route(current.bookId,line,to);
+  }
+  function updateSidebarButtons(open) {
+    $('source-toc-toggle').setAttribute('aria-expanded',String(open));
+    $('source-toc-toggle').textContent=mobileSidebar.matches?'目录':open?'收起目录':'展开目录';
+    $('source-tools').hidden=!mobileSidebar.matches && current?.toc?.length !== 0;
+  }
+  $('source-toc-toggle').addEventListener('click',()=>{
+    if(mobileSidebar.matches)setSidebar(true,'toc',$('source-toc-toggle'));
+    else setSidebar(document.body.classList.contains('source-sidebar-closed'),'toc',$('source-toc-toggle'));
+  });
+  $('source-tools').addEventListener('click',()=>setSidebar(true,'bookmarks',$('source-tools')));
+  $('sidebar-close').addEventListener('click',()=>setSidebar(false));
+  $('sidebar-backdrop').addEventListener('click',()=>setSidebar(false));
+  for (const name of Object.keys(sidebarPanels)) $(`${name}-tab`).addEventListener('click',()=>selectSidebarTab(name));
+  document.querySelector('.sidebar-tabs').addEventListener('keydown',event=>{
+    if (!['ArrowLeft','ArrowRight','Home','End'].includes(event.key)) return;
+    const tabs=[...document.querySelectorAll('.sidebar-tabs button:not([hidden])')];
+    const i=tabs.indexOf(document.activeElement);
+    const next=event.key==='Home'?0:event.key==='End'?tabs.length-1:(i+(event.key==='ArrowRight'?1:tabs.length-1))%tabs.length;
+    event.preventDefault();tabs[next].click();tabs[next].focus();
+  });
+  $('source-sidebar').addEventListener('keydown',event=>{
+    if(event.key==='Escape'){event.preventDefault();setSidebar(false);return;}
+    if(event.key!=='Tab'||!mobileSidebar.matches)return;
+    const items=[...$('source-sidebar').querySelectorAll('button,input,a[href],summary')].filter(el=>!el.disabled&&el.tabIndex>=0&&el.getClientRects().length);
+    const first=items[0],last=items.at(-1);
+    if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}
+    else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}
+  });
+  mobileSidebar.addEventListener('change',()=>setSidebar(!mobileSidebar.matches));
+  new ResizeObserver(()=>document.body.style.setProperty('--source-context-height',`${document.querySelector('.source-context').offsetHeight}px`)).observe(document.querySelector('.source-context'));
+  document.body.classList.toggle('source-sidebar-closed',mobileSidebar.matches);
+  updateSidebarButtons(!mobileSidebar.matches);
+  const entryAt = line => current?.toc?.findLast(entry=>entry.line<=line);
+  function trackToc(line) {
+    const entry=entryAt(line);
+    if(entry?.id===activeTocId)return;
+    activeTocId=entry?.id;
+    for(const row of $('toc-list').querySelectorAll('.toc-entry')) {
+      const active=row.dataset.tocId===activeTocId;
+      row.setAttribute('aria-current',String(active));
+      if(active){
+        const group=row.closest('details');if(group)group.open=true;
+        if(!$('toc-panel').hidden && (!mobileSidebar.matches||document.body.classList.contains('source-sidebar-open'))){
+          const box=$('source-sidebar').getBoundingClientRect(),rect=row.getBoundingClientRect();
+          if(rect.top<box.top+110||rect.bottom>box.bottom)$('source-sidebar').scrollTop+=rect.top-box.top-130;
+        }
+      }
+    }
+  }
+  function renderToc() {
+    const entries=current?.toc??[], filter=compact($('toc-filter').value).toLowerCase();
+    $('toc-list').replaceChildren();
+    $('toc-tab').hidden=!entries.length;$('source-toc-toggle').hidden=!entries.length;
+    updateSidebarButtons(!document.body.classList.contains('source-sidebar-closed'));
+    if(!entries.length){selectSidebarTab('bookmarks');document.body.classList.add('source-sidebar-closed');return;}
+    let group,groupEntries=[];
+    function flush(){
+      if(!group)return;
+      const matches=groupEntries.filter(entry=>compact(entry.title).toLowerCase().includes(filter));
+      if(!matches.length)return;
+      const details=node('details'),summary=node('summary',group.title);
+      details.open=Boolean(filter)||groupEntries.some(entry=>entry.id===entryAt(readingLine()??range.from)?.id);
+      details.append(summary);
+      for(const entry of matches){
+        const row=node('div',undefined,`toc-entry toc-level-${entry.level}`);row.dataset.tocId=entry.id;
+        const jump=node('a',entry.title);jump.href=`#${hashFor(current.bookId,entry.line,entry.line)}`;jump.dataset.tocLine=entry.line;
+        if(entry.date)jump.title=entry.date;
+        jump.addEventListener('click',event=>{event.preventDefault();sidebarJump(entry.line);});row.append(jump);
+        const links=node('div',undefined,'toc-study-links');
+        for(const [output,label] of [[entry.unitOutput,'精读 ↗'],[entry.readerOutput,'伴读 ↗']])if(output){const link=node('a',label);link.href=`./${output}`;links.append(link);}
+        row.append(links);details.append(row);
+      }
+      $('toc-list').append(details);
+    }
+    for(const entry of entries){if(entry.level===1){flush();group=entry;groupEntries=[];}groupEntries.push(entry);}flush();
+    if(!$('toc-list').children.length)$('toc-list').append(node('p','没有匹配的篇名。'));
+    activeTocId=undefined;trackToc(readingLine()??range.from);
+  }
+  $('toc-filter').addEventListener('input',renderToc);
+  let tocTimer;
+  window.addEventListener('scroll',()=>{if(!tocTimer)tocTimer=setTimeout(()=>{tocTimer=null;if(!loading)trackToc(readingLine());},150);},{passive:true});
+  function renderSearchResults(query) {
+    $('search-results').replaceChildren();
+    const groups=new Map();
+    for(const [i,result] of searchResults.entries()){
+      const entry=entryAt(result.line),key=entry?.id??'front';
+      if(!groups.has(key))groups.set(key,{title:entry?.title??'卷首',items:[]});groups.get(key).items.push({result,i});
+    }
+    for(const {title,items} of groups.values()){
+      const section=node('section');section.append(node('h3',`${title} · ${items.length} 处`));
+      for(const {result,i} of items){
+        const link=node('a');link.href=`#${hashFor(current.bookId,result.line,result.to)}`;link.dataset.searchLine=result.line;
+        link.append(node('small',`第 ${result.line} 行 · 扫描页 ${pageAt(result.line)??'未标记'}`));
+        link.append(document.createTextNode(result.before),node('mark',query),document.createTextNode(result.after));
+        link.addEventListener('click',event=>{event.preventDefault();searchCursor=i;sidebarJump(result.line,result.to);});section.append(link);
+      }
+      $('search-results').append(section);
+    }
+    $('search-status').textContent=`共 ${searchResults.length} 处${searchResults.length===200?'（最多显示 200 处）':''}`;
+    $('search-prev').disabled=$('search-next').disabled=!searchResults.length;
+  }
+  async function searchBook() {
+    clearTimeout(searchTimer);searchTimer=null;
+    const token=++searchVersion,book=current,query=compact($('source-search').value);
+    searchResults=[];searchCursor=-1;$('search-results').replaceChildren();$('search-prev').disabled=$('search-next').disabled=true;
+    if(!book||!(/\p{Script=Han}/u.test(query)||/[a-z].*[a-z]/i.test(query))){$('search-status').textContent='请输入至少 1 个汉字或 2 个字母。';return;}
+    try{
+      for(let chunk=0;chunk<book.chunkCount;chunk++){
+        $('search-status').textContent=`载入原书 ${chunk}/${book.chunkCount}`;
+        await loadChunk(book.bookId,chunk);
+        if(token!==searchVersion||current!==book)return;
+      }
+      const segments=[];let text='';
+      for(let chunk=0;chunk<book.chunkCount;chunk++){
+        const payload=chunks.get(`${book.bookId}/${chunk}`);
+        payload.lines.forEach((line,offset)=>{
+          if(!'th'.includes(payload.classes[offset])||/^==========第\d+页==========$/.test(line))return;
+          const value=compact(line);if(!value)return;
+          segments.push({start:text.length,end:text.length+value.length,line:chunk*book.chunkSize+offset+1});text+=value;
+        });
+      }
+      const lineAt=offset=>{let low=0,high=segments.length-1;while(low<high){const mid=Math.floor((low+high)/2);if(segments[mid].end<=offset)low=mid+1;else high=mid;}return segments[low]?.line;};
+      let offset=0;
+      while(searchResults.length<200&&(offset=text.indexOf(query,offset))!==-1){
+        searchResults.push({line:lineAt(offset),to:lineAt(offset+query.length-1),before:text.slice(Math.max(0,offset-20),offset),after:text.slice(offset+query.length,offset+query.length+35)});offset+=query.length;
+      }
+      renderSearchResults(query);
+    }catch(error){if(token===searchVersion)$('search-status').textContent=error.message;}
+  }
+  function cycleSearch(direction){if(!searchResults.length)return;searchCursor=searchCursor<0?(direction>0?0:searchResults.length-1):(searchCursor+direction+searchResults.length)%searchResults.length;const result=searchResults[searchCursor];sidebarJump(result.line,result.to);}
+  $('source-search').addEventListener('input',()=>{clearTimeout(searchTimer);searchVersion++;searchTimer=setTimeout(searchBook,250);});
+  $('source-search').addEventListener('keydown',async event=>{if(event.key==='Enter'){event.preventDefault();if(searchTimer)await searchBook();cycleSearch(1);}});
+  $('search-prev').addEventListener('click',()=>cycleSearch(-1));$('search-next').addEventListener('click',()=>cycleSearch(1));
+
   window.addEventListener('hashchange', navigate);
   navigate();
 })();

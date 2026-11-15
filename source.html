@@ -18,20 +18,40 @@
       <form id="line-jump"><label>跳到行 <input id="line-number" type="number" min="1" required></label><button>前往</button></form>
       <form id="page-jump"><label>跳到扫描页 <input id="scan-page" type="number" min="1" required></label><button>前往</button></form>
     </div>
-    <section id="bookmark-panel" aria-labelledby="bookmark-title"><h2 id="bookmark-title">书签</h2><div id="bookmark-list"></div></section></details>
+    </details>
     <p id="storage-note" class="reader-muted" hidden>此浏览器无法保存书签</p>
     <p id="source-status" role="status"></p>
   </header>
   <div class="source-context">
     <div id="source-ref" hidden><span id="source-ref-label"></span> <a id="source-return">← 返回精读</a></div>
-    <button id="bookmark-current" type="button">加书签</button><label><input id="source-raw" type="checkbox"> 显示原始行</label><button id="source-tools" type="button">跳转工具 ↑</button>
+    <button id="bookmark-current" type="button">加书签</button><label><input id="source-raw" type="checkbox"> 显示原始行</label><button id="source-toc-toggle" type="button" aria-controls="source-sidebar" aria-expanded="false">目录</button><button id="source-tools" type="button" aria-controls="source-sidebar">书签</button>
   </div>
   <div id="source-resume" hidden><span id="resume-label"></span><button id="resume-start" type="button">从头开始</button><button id="resume-dismiss" type="button" aria-label="关闭阅读位置提示">×</button></div>
+  <button id="sidebar-backdrop" type="button" aria-label="关闭目录" hidden></button>
+  <div class="source-layout">
+  <aside id="source-sidebar" aria-label="原书导航" tabindex="-1">
+    <div class="sidebar-top"><strong>原书导航</strong><button id="sidebar-close" type="button" aria-label="收起侧栏">×</button></div>
+    <div class="sidebar-tabs" role="tablist" aria-label="导航方式">
+      <button id="toc-tab" role="tab" aria-selected="true" aria-controls="toc-panel">目录</button>
+      <button id="bookmarks-tab" role="tab" aria-selected="false" aria-controls="bookmark-panel" tabindex="-1">书签</button>
+      <button id="search-tab" role="tab" aria-selected="false" aria-controls="search-panel" tabindex="-1">全文搜索</button>
+    </div>
+    <section id="toc-panel" role="tabpanel" aria-labelledby="toc-tab"><label>筛选目录 <input id="toc-filter" type="search" placeholder="输入篇名"></label><nav id="toc-list" aria-label="原书目录"></nav></section>
+    <section id="bookmark-panel" role="tabpanel" aria-labelledby="bookmarks-tab" hidden><h2 id="bookmark-title">书签</h2><div id="bookmark-list"></div></section>
+    <section id="search-panel" role="tabpanel" aria-labelledby="search-tab" hidden>
+      <label>查找原书 <input id="source-search" type="search" placeholder="输入关键词"></label>
+      <p class="reader-muted">至少 1 个汉字或 2 个字母。OCR 识别错误可能导致漏检。</p>
+      <div class="search-controls"><button id="search-prev" type="button" disabled>上一处</button><button id="search-next" type="button" disabled>下一处</button></div>
+      <p id="search-status" role="status"></p><div id="search-results"></div>
+    </section>
+  </aside>
   <main class="source-main">
     <button id="load-before" type="button" disabled>加载上文</button>
     <div id="source-lines" tabindex="-1" aria-label="OCR 原书，按行显示"></div>
     <button id="load-after" type="button" disabled>加载下文</button>
   </main>
+  </div>
+  <dialog id="source-line-menu" aria-labelledby="line-menu-title"><button id="close-line-menu" type="button">关闭 ×</button><h2 id="line-menu-title">原文行与书签</h2><label>原始行 <select id="bookmark-menu-line"></select></label><button id="bookmark-menu-toggle" type="button">加书签</button><a id="bookmark-menu-link">定位这一行 ↗</a></dialog>
   <dialog id="source-references" aria-labelledby="references-title"><button id="close-references" type="button">关闭 ×</button><h2 id="references-title">引用这一行的精读</h2><div id="reference-list"></div></dialog>
   <noscript>原文浏览器需要启用 JavaScript。保留 sources 目录即可离线阅读。</noscript>
   <script id="source-books" type="application/json">[{"bookId":"mao-selected","title":"毛泽东选集"},{"bookId":"formal-logic-1976","title":"形式逻辑通俗讲话（1976）"},{"bookId":"family-origin","title":"家庭、私有制和国家的起源"}]</script>
