@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="先把“逻辑”的几种用法分清，再从具体话语中抽出形式。本讲接着讨论它能帮助什么，以及怎样把学习变成自觉运用。">
+  <title>第一讲·大家都来学点逻辑 · 形式逻辑通俗讲话</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到正文</a>
+  <aside class="sidebar" aria-label="篇目与导览">
+    <a class="brand" href="#overview" aria-label="知行 · 精读首页"><span class="brand-mark" aria-hidden="true">知<span>行</span></span><span>知行<span class="brand-caption">一本书，一条思考的路</span></span></a>
+    <a class="library-link" href="./index.html">← 精读书库</a>
+    <div class="library-label"><span id="book-title">毛泽东选集</span> <span>精读</span></div>
+    <div class="book-entry"><span class="entry-num">01</span><span><span id="entry-title">实践论</span><small id="entry-label">首篇导读 · 已完成</small></span><span class="entry-dot" aria-hidden="true"></span></div>
+    <div id="upcoming" class="upcoming"></div>
+    <nav class="section-nav" aria-label="本文导览">
+      <span class="nav-label">本文导览</span>
+      <a href="#overview"><span>01</span> 从一个问题开始</a>
+      <a href="#route"><span>02</span> <span class="nav-text" id="route-nav">走一遍认识的路</span></a>
+      <a href="#concepts"><span>03</span> <span class="nav-text" id="concepts-nav">分清两组概念</span></a>
+      <a href="#sources"><span>04</span> 回到原文</a>
+      <a href="#exercise"><span>05</span> 检验你的理解</a>
+    </nav>
+    <div class="sidebar-foot"><span class="offline-dot" aria-hidden="true"></span>离线精读样板<span id="scope-note">本页仅完成《实践论》</span></div>
+  </aside>
+  <div class="page-shell">
+    <header class="topbar"><span>阅读，不止于读过。</span><span class="edition" id="edition-label">INTERACTIVE READING / 001</span></header>
+    <main id="main-content">
+      <section id="overview" class="hero" aria-labelledby="article-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="red-rule"></span>经典精读 <span class="subtle">/</span> <span id="article-subject">认识论</span></div>
+          <h1 id="article-title"><span id="hero-title">实践论</span><span class="title-dot">。</span></h1>
+          <p class="article-meta"><span id="article-author">毛泽东</span> <span>·</span> <span id="article-date"></span></p>
+          <p class="subtitle" id="article-subtitle"></p>
+          <h2 class="hero-question" id="core-question"></h2>
+          <p class="hero-intro" id="article-intro"></p>
+          <a class="primary-button" href="#route">开始走这条路 <span aria-hidden="true">↗</span></a>
+          <span class="hero-hint" id="hero-hint">5 个阶段 · 原文对照 · 3 道练习</span>
+        </div>
+        <div class="hero-art" id="hero-art" role="img" aria-label="知与行相互推动：从实践到认识，再由认识返回实践">
+          <svg viewBox="0 0 390 360" aria-hidden="true">
+            <defs><marker id="arrow-ink" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#1c3f8b" stroke-width="1.4"/></marker><marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#a83d2e" stroke-width="1.4"/></marker></defs>
+            <circle cx="195" cy="175" r="137" fill="none" stroke="#dfdbcf" stroke-dasharray="2 7"/>
+            <circle cx="195" cy="175" r="100" fill="none" stroke="#e5e1d7"/>
+            <path d="M77 130C100 51 246 34 307 127" fill="none" stroke="#1c3f8b" stroke-width="1.6" marker-end="url(#arrow-ink)"/>
+            <path d="M313 215C269 300 131 303 79 221" fill="none" stroke="#a83d2e" stroke-width="1.6" marker-end="url(#arrow-red)"/>
+            <path d="M41 175H349M195 22V328" stroke="#e4e0d6" stroke-width="1"/>
+            <circle cx="77" cy="175" r="4" fill="#a83d2e"/><circle cx="313" cy="175" r="4" fill="#1c3f8b"/>
+            <text x="115" y="200" class="art-character">行</text><text x="217" y="200" class="art-character art-know">知</text>
+            <text x="195" y="35" text-anchor="middle" class="art-note">从 实 践 中 来</text><text x="195" y="330" text-anchor="middle" class="art-note">到 实 践 中 去</text>
+            <text x="195" y="245" text-anchor="middle" class="art-small">认识的运动，永不止步</text>
+          </svg>
+          <span class="art-caption">读懂一个循环，也读懂一次深化。</span>
+        </div>
+      </section>
+      <details class="background-note"><summary><span class="note-symbol" aria-hidden="true">i</span><span id="background-title">为什么写这篇文章？</span><span class="detail-hint">展开写作背景与阅读说明</span></summary><div class="background-body"><p class="content-label" id="background-label">编辑导读 · 背景据本书题解</p><p id="article-background"></p><div id="background-refs" class="source-links"></div></div></details>
+      <section id="core-visual" class="core-visual" aria-labelledby="visual-title" hidden></section>
+      <section id="route" class="route-section" aria-labelledby="route-title">
+        <div class="section-heading"><div><span class="section-kicker">01 / THE READING PATH</span><h2 id="route-title">走一遍，认识的路。</h2></div><span class="section-aside">点击节点，展开一步</span></div>
+        <p class="section-intro" id="route-intro">认识如何从实践中发生，又怎样回到实践？<br class="desktop-break">沿着下面五个节点，跟随一个连续的现代类比来理解。</p>
+        <div class="argument-map">
+          <div class="map-annotation" id="map-annotation"><span>从世界中获得认识</span><span>让认识回到世界</span></div>
+          <div id="stage-tabs" class="stage-tabs" role="tablist" aria-label="认识的五个阅读阶段"></div>
+          <div class="map-return" id="map-return"><svg viewBox="0 0 800 28" preserveAspectRatio="none" aria-hidden="true"><path d="M786 1V17H14V1" fill="none" stroke="currentColor" stroke-width="1"/><path d="M9 7 14 1 19 7" fill="none" stroke="currentColor" stroke-width="1"/></svg><span>新的实践，带来更深的认识</span></div>
+        </div>
+        <p class="editorial-note" id="editorial-note"></p>
+        <div class="stage-layout">
+          <div id="stage-panel" class="stage-panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-0">
+            <div class="stage-topline"><span id="stage-tag" class="content-label"></span><span id="stage-count" class="stage-count"></span></div>
+            <h3 id="stage-summary"></h3>
+            <p id="stage-explanation" class="explanation"></p>
+            <div class="analogy-block"><span class="content-label" id="analogy-label">现代类比 · 改善图书馆借阅体验</span><p id="stage-analogy"></p></div>
+            <div class="thinking-prompt"><span aria-hidden="true">↳</span><span id="stage-prompt"></span></div>
+            <div class="stage-controls"><button id="previous-stage" type="button">← 上一步</button><span>也可用方向键切换节点</span><button id="next-stage" type="button">下一步 →</button></div>
+          </div>
+          <aside class="current-sources" aria-labelledby="current-source-title"><div class="quote-heading"><span class="quote-mark" aria-hidden="true">“</span><div><span class="content-label">原文对照</span><h3 id="current-source-title">让解释有据可循</h3></div></div><div id="stage-excerpts"></div><p class="quote-footnote" id="quote-footnote">以下为本地 OCR 原文；疑似识别错误未作改写。</p></aside>
+        </div>
+        <p id="stage-announcement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <section id="concepts" class="concept-section" aria-labelledby="concepts-title"><div class="section-heading"><div><span class="section-kicker">02 / THINK IN RELATIONS</span><h2 id="concepts-title">别把相连的，读成对立的。</h2></div></div><div id="comparison-list"></div></section>
+      <section id="sources" class="sources-section" aria-labelledby="sources-title"><div class="section-heading"><div><span class="section-kicker">03 / BACK TO THE TEXT</span><h2 id="sources-title">解释之外，回到原文。</h2></div><span class="source-total" id="source-total"></span></div><p class="section-intro" id="sources-intro">引文只是精读的入口。每一条都保留了可以回查的文件行号与扫描页。</p><div class="source-notice"><p id="version-note"></p><p class="source-file">来源：<span id="source-name"></span><span id="source-location-note"> · 《实践论》标题第 3386 行，扫描页 283</span></p></div><details id="source-library" class="source-library"><summary><span id="source-library-label"></span><span aria-hidden="true">＋</span></summary><ol id="excerpt-list" class="excerpt-list"></ol></details></section>
+      <section id="exercise" class="exercise-section" aria-labelledby="exercise-title"><div class="section-heading"><div><span class="section-kicker">04 / MAKE IT YOUR OWN</span><h2 id="exercise-title">把“读过”变成“理解”。</h2></div><span class="section-aside" id="exercise-count">3 道情境判断</span></div><p class="section-intro" id="exercise-intro">回看图书馆的例子，试着分清认识过程中的不同环节。<br class="desktop-break">答错也有用：每道题都会给出解释与原文依据。</p><form id="quiz-form" novalidate><div id="quiz-questions"></div><div class="quiz-actions"><button type="submit" id="quiz-submit" class="primary-button">提交，看看理解到哪一步 <span aria-hidden="true">↗</span></button><button type="button" id="quiz-reset" class="text-button">重置练习</button></div><div id="quiz-status" class="quiz-status" role="status" aria-live="polite" aria-atomic="true"></div></form></section>
+      <footer class="page-footer"><div class="footer-line"><span id="footer-from">从实践中来</span><span class="footer-arrow" aria-hidden="true">↗</span><span id="footer-to">再向实践中去</span></div><p><span id="footer-title">《实践论》交互精读样板</span> <span>·</span> 引文 / 编辑解释 / 现代类比分层呈现</p><a href="#overview">回到开篇 ↑</a></footer>
+    </main>
+  </div>
+  <noscript><p class="noscript-notice">交互精读需要启用 JavaScript。所有脚本均在本地，无需联网；原始内容可在 data/logic-01.json 中阅读。</p></noscript>
+  <script id="book-data" type="application/json">{"book":{"id":"formal-logic-1976","title":"形式逻辑通俗讲话","author":"北京市建筑木材厂《形式逻辑通俗讲话》编写组、北京师范大学政治教育系","source":{"file":"形式逻辑通俗讲话1976.txt","sha256":"55ebaa5c14af3414d9f3635ef2c9bfd380a885d145503d8f78dc5efb63a42054","kind":"txt-scan-markers"},"upcoming":[]},"article":{"id":"logic-01","title":"第一讲·大家都来学点逻辑","date":"1976 年 1 月版","subtitle":"《形式逻辑通俗讲话》第一讲 · 全部三小节","question":"形式逻辑研究什么，有什么用，又该怎样学？","intro":"先把“逻辑”的几种用法分清，再从具体话语中抽出形式。本讲接着讨论它能帮助什么，以及怎样把学习变成自觉运用。","background":"本讲是这部 1976 年教材的开篇，依次回答“什么是逻辑”“为什么要学点逻辑”“怎样学习逻辑”。编者在当时的政治语境中，把形式逻辑定位为辅助工具，强调学习马列与毛泽东著作，并联系其所称“三大革命实践”和群众性批判来学。这里把这些主张作为本书的历史表述保留；现代类比另列，不把当年的政治评价当成未经说明的今日结论。","backgroundExcerptIds":["l-boundary","l-criticism","l-reading","l-practice"],"versionNote":"引文逐字保留下载核验后的本地 OCR TXT，尚未逐字对照 PDF 校勘。文本扫描页指 TXT 内“第×页”标记，不等于纸书印刷页码或 PDF 阅读器页码；疑似误字与标点保留原貌。","editorialNote":"四个节点是编辑组织的阅读路线，覆盖原讲全部三小节，不是原书新增章节。它说明对象、形式与内容、用途及学法之间的关系，不是认识论五阶段或循环图。","sourceRange":{"lineStart":80,"lineEnd":142},"presentation":{"subject":"形式逻辑","editionLabel":"LOGIC / 01","entryLabel":"第一讲 · 完整单元","scopeNote":"本书共 12 讲；后续单元见书库状态","heroTitle":"学点逻辑","heroCaption":"对象 → 用途 → 学法","routeTitle":"先找对象，再看用途与学法。","routeIntro":"从“逻辑”一词的用法出发，分清形式与内容，再理解本讲所说的用途与学习方法。点击四个节点，结合现代类比和原文阅读。","routeAriaLabel":"第一讲的四个阅读节点","analogyLabel":"现代类比 · 社区活动通知与论证","backgroundTitle":"这本教材怎样提出问题？","backgroundLabel":"编辑导读 · 本书的编写语境","sourcesIntro":"以下精选原文覆盖第一讲三小节，定位到原始 TXT 行号与文本扫描页。","sourceLocationNote":"第一讲第 80–142 行；版次见原文件第 16 行","quoteFootnote":"以下为本地 OCR TXT 原文；文本扫描页不是 PDF 或纸书页码，疑似误字未作改写。","exerciseIntro":"以社区活动通知为现代情境，检查你能否分清形式与内容、理解工具的用途，并把学法转化为自觉运用。","footerFrom":"分清思维的形式","footerTo":"自觉地分析与表达","mapGroups":[{"label":"什么是逻辑","span":2},{"label":"为什么学 · 怎样学","span":2}],"returnLabel":null},"visual":{"title":"换掉内容，留下相同的形式。","caption":"现代设例 · 编辑整理。横看不同内容，竖看从前提到结论的结构。推演以所列前提成立为条件；形式相同不表示前提已被事实证实。","columns":["内容 A · 报名与通知","内容 B · 志愿者与培训","共同的推理形式"],"rows":[["前提 1：所有报名者都收到通知。","前提 1：所有志愿者都参加培训。","前提 1：所有 M 都是 P。"],["前提 2：小林是报名者。","前提 2：小周是志愿者。","前提 2：S 是 M。"],["结论：所以，小林收到通知。","结论：所以，小周参加培训。","结论：所以，S 是 P。"]],"excerptIds":["l-content-form","l-form"]}},"excerpts":[{"id":"l-meanings","text":"“逻辑”这个词是从外文音译过来的，用在不同的场合，有着不同的含义。","lineStart":83,"lineEnd":83,"scanPageStart":5,"scanPageEnd":5,"label":"“逻辑”有不同的用法","sourceType":"本书正文"},{"id":"l-law-word","text":"这里所说的“逻辑”，是指客观事物发展的必然规律。","lineStart":85,"lineEnd":85,"scanPageStart":5,"scanPageEnd":5,"label":"词义之一：客观规律","sourceType":"本书正文"},{"id":"l-view-word","text":"这里所说的“逻辑”是指一种特殊的理论、观点或说法。","lineStart":87,"lineEnd":87,"scanPageStart":5,"scanPageEnd":5,"label":"词义之二：理论或说法","sourceType":"本书正文"},{"id":"l-science-word","text":"这里所说的“逻辑”是指一门研究思维的科学一形式逻辑。","lineStart":92,"lineEnd":92,"scanPageStart":6,"scanPageEnd":6,"label":"本书所学：形式逻辑","sourceType":"本书正文"},{"id":"l-thinking","text":"由此可见，思维的过程就是人们运用概念进行判断和推理的过程。","lineStart":97,"lineEnd":97,"scanPageStart":7,"scanPageEnd":7,"label":"思维中的概念、判断与推理","sourceType":"本书正文"},{"id":"l-content-form","text":"所谓内容方面，是指它们所反映的具体事物、事物的情况、事物之间的关系，我们称做“思维的内容”。所谓形式方面，是指它们的逻辑特征及结构，我们称做“思维的形式”。","lineStart":98,"lineEnd":98,"scanPageStart":7,"scanPageEnd":7,"label":"区分思维的内容与形式","sourceType":"本书正文"},{"id":"l-form","text":"形式逻辑不研究推理的具体内容，它只是从推理的形式方面来研究推理的特征以及达到推理有逻辑性的一般要求。","lineStart":106,"lineEnd":106,"scanPageStart":8,"scanPageEnd":8,"label":"关注推理形式及其要求","sourceType":"本书正文"},{"id":"l-laws","text":"形式逻辑除研究思维的形式之外，还研究它们的规律，即同一律，矛盾律，排中律。","lineStart":107,"lineEnd":107,"scanPageStart":8,"scanPageEnd":8,"label":"形式之外，还研究规律","sourceType":"本书正文"},{"id":"l-definition","text":"形式逻辑是研究思维的形式及其规律的科学。","lineStart":108,"lineEnd":108,"scanPageStart":8,"scanPageEnd":8,"label":"本讲的定义","sourceType":"本书正文"},{"id":"l-boundary","text":"形式逻辑这门科学和哲学不同。哲学是关于自然知识和社会知识的概括和总结，马克思主义哲学是无产阶级的世界观和方法论，是我们进行三大革命斗争，认识世界和改造世界的尖锐武器。形式逻辑是一门具体科学，它只是人们认识事物和表达思想的辅助工具，决不能把形式逻辑和哲学混同起来。但是，必须指出，形式逻辑作为一门科学，'必须以马克思主义哲学为指导，只有这样，才能彻底清除形式逻辑中摊心主义和形而上学的影响，才能让形式逻辑更好地为无产阶级政治服务，为批判修正主义、批判资产阶毁、巩固无产阶级专政、建设社会主义服务。：","lineStart":109,"lineEnd":109,"scanPageStart":8,"scanPageEnd":8,"label":"编者对学科边界与历史使命的说明","sourceType":"本书正文"},{"id":"l-knowing","text":"如果在思维过程中概念不清，判断错误，推理有毛病，就会影响思维的效果，就不能正确地认识事物。","lineStart":116,"lineEnd":116,"scanPageStart":9,"scanPageEnd":9,"label":"用途之一：帮助分析和认识","sourceType":"本书正文"},{"id":"l-expression","text":"学习了形式逻辑，按照逻辑规律，运用概念以作判断和推理，就有助于达到这些要求，使文章中心明确，条理清楚，结构严密，有说服力。","lineStart":118,"lineEnd":118,"scanPageStart":9,"scanPageEnd":9,"label":"用途之二：帮助表述和论证","sourceType":"本书正文"},{"id":"l-criticism","text":"(三)学习形式逻辑，对于我们进行革命大批判，揭露敌人的谣言和诡辩，也有一定帮助。","lineStart":119,"lineEnd":119,"scanPageStart":9,"scanPageEnd":9,"label":"用途之三：本书的历史语境","sourceType":"本书正文"},{"id":"l-conscious","text":"如果学习了形式逻辑，从不自觉地运用变成自觉运用，他的文章一定会写得更好。","lineStart":133,"lineEnd":133,"scanPageStart":11,"scanPageEnd":11,"label":"从不自觉运用到自觉运用","sourceType":"本书正文"},{"id":"l-reading","text":"用心学习马列著作和毛主席著作中对逻辑的运用，这对于准确地领会原著的基本精神，，学会自觉地运用逻辑，都会有很大的好处。","lineStart":140,"lineEnd":140,"scanPageStart":12,"scanPageEnd":12,"label":"编者提出的第一种学法","sourceType":"本书正文"},{"id":"l-practice","text":"第二，联系三大革命实践来学，特别是要在群众性的大批判、大辩论中学。","lineStart":141,"lineEnd":141,"scanPageStart":12,"scanPageEnd":12,"label":"编者提出的第二种学法","sourceType":"本书正文"}],"stages":[{"id":"logic-meanings","title":"先辨词义","mini":"明确研究对象","summary":"说到“逻辑”，先问它指什么。","tag":"第一小节 · 词义与对象","explanation":"本讲列出“逻辑”的几种用法：客观事物的规律、某种观点或说法、思维的规律性，以及一门研究思维的科学。本书所讲的是最后这一意义上的形式逻辑。它以概念、判断、推理等思维形式为主要对象，还研究这些形式的规律；不能把日常所有带“逻辑”的话都当成学科定义。","analogy":"社区群里有人说“这安排的逻辑不对”。他可能在批评安排的理由，而不是给形式逻辑下定义。先问清楚所指，再分析通知中用了哪些概念、作出了什么判断、怎样从理由得出结论。","excerptIds":["l-meanings","l-law-word","l-view-word","l-science-word","l-thinking","l-definition"],"prompt":"这里的“逻辑”，是在说规律、观点，还是一门学科？"},{"id":"logic-form","title":"抽出形式","mini":"分清内容结构","summary":"换掉具体内容，看清相同结构。","tag":"第一小节 · 内容、形式与规律","explanation":"本讲把所反映的具体事物、情况和关系称为思维的内容，把逻辑特征及结构称为思维的形式。例如“所有 M 都是 P；S 是 M；所以 S 是 P”可以装入不同内容。形式逻辑关注这样的结构及其要求，也研究同一律、矛盾律、排中律。本讲只是点明这些规律，后续讲次才展开；此处的结构分析本身也不能代替对具体事实和前提的核实。","analogy":"“所有报名者都收到通知；小林已报名；所以小林收到通知。”换成“所有志愿者都参加培训；小周是志愿者；所以小周参加培训”，具体内容不同，结构相同。结构成立并不能替你证明“所有报名者都收到通知”这句话在现实中确实为真。","excerptIds":["l-content-form","l-form","l-laws","l-definition"],"prompt":"我检查的是话语的结构，还是前提所说的事实？"},{"id":"logic-uses","title":"看清用途","mini":"帮助认识表达","summary":"它能帮助思考，却有自己的边界。","tag":"第二小节 · 三种用途","explanation":"编者从三方面说明用途：帮助分析与认识、帮助表述与论证、帮助识别其历史政治语境中所说的谣言和诡辩。前两方面要求概念明确、判断恰当、推理有逻辑性，第三方面同样涉及分析论证中的错误。本书把形式逻辑定位为具体科学和辅助工具，并明确区分它与哲学；关于政治服务方向的表述属于编者的时代主张。","analogy":"活动通知若一处把“报名者”当成已交表的人，另一处又当成只表达兴趣的人，结论就容易混乱。统一概念、核实判断、检查理由与结论的联系，可以帮助写清通知和辨析质疑；但仍要调查报名记录与真实情况。","excerptIds":["l-knowing","l-expression","l-criticism","l-boundary"],"prompt":"我是否把辅助分析的工具，误当成了事实调查的替代品？"},{"id":"logic-learning","title":"学会运用","mini":"从自发到自觉","summary":"结合阅读与实际，知道为什么这样推。","tag":"第三小节 · 态度与学法","explanation":"本讲先回应两种顾虑：没有专门学过也能写好文章，并不意味着学习无用；内容抽象，也不意味着不能学好。编者强调从不自觉遵守规则走向自觉运用。其具体建议是结合马列和毛泽东著作阅读，并联系当时所称“三大革命实践”、特别是群众性批判和辩论来学。这些是原书的学法与历史语境；今天的现代练习可以另选具体材料，但不能冒充原书例子。","analogy":"拿一份真实活动通知做练习：标出关键词、判断和结论，说明每一步依据；再针对质疑修改表达，并核对实际记录。读规则、分析材料、自己表达、说明理由相互配合，比只记“凡是……所以……”更能训练自觉运用。","excerptIds":["l-conscious","l-reading","l-practice"],"prompt":"我能说明为什么这样判断和推理，而不只是模仿句式吗？"}],"comparisons":[{"id":"logic-content-form","title":"思维的内容与思维的形式","leftTitle":"内容","left":"话语反映的具体事物、情况和关系。例如社区中的报名者、通知和接收情况。","rightTitle":"形式","right":"话语的逻辑特征及结构。例如“所有 M 都是 P；S 是 M；所以 S 是 P”。","relation":"关系：不同的具体内容可以使用同一种形式。检查结构与核实具体前提是不同工作；本讲说明形式逻辑侧重前者。","excerptIds":["l-content-form","l-form"]},{"id":"logic-tool-boundary","title":"辅助工具与更广的认识任务","leftTitle":"形式逻辑的帮助","left":"通过明确概念、恰当判断和合乎要求的推理，帮助分析、表述和论证，辨析话语中的逻辑错误。","rightTitle":"工具的边界","right":"本书称形式逻辑为具体科学和辅助工具，强调它不同于哲学。具体问题仍有具体内容与历史条件，不能只凭形式作出所有判断。","relation":"原书归属：编者关于哲学指导与政治服务方向的论述，属于这部 1976 年教材的历史主张。现代说明侧重区分结构分析、事实材料与价值立场，不把这几项混为一谈。","excerptIds":["l-boundary","l-knowing","l-expression","l-criticism"]}],"quiz":[{"id":"logic-q-form","question":"把“所有报名者都收到通知；小林已报名；所以小林收到通知”换成志愿者与培训的例子，两者相同的是什么？","options":["所反映的具体人和事完全相同","从两个前提出发得到结论的推理形式相同","因为形式相同，两组前提就一定符合事实"],"answerIndex":1,"explanation":"两组话语可以具有相同的推理形式，但内容不同。形式分析不能自动核实每一组前提是否符合事实。","excerptIds":["l-content-form","l-form"]},{"id":"logic-q-use","question":"通知中“报名者”前后含义不同，学习形式逻辑最直接能怎样帮助？","options":["分析概念与推理，帮助把表达和论证写清楚","保证活动成功，不必核实任何记录","取代所有哲学与实际问题的研究"],"answerIndex":0,"explanation":"本讲说形式逻辑能够帮助分析认识与表述论证，并把它定位为辅助工具。它不包办活动结果，也不能替代事实核实。","excerptIds":["l-knowing","l-expression","l-boundary"]},{"id":"logic-q-learn","question":"有人没专门学过逻辑也能写清通知。按本讲对学法的说明，更合适的做法是什么？","options":["既然有经验，学习规则就完全没有意义","只背规则，避免接触具体材料","结合阅读与实际材料，学会自觉说明和运用规则"],"answerIndex":2,"explanation":"编者区分不自觉遵守与自觉运用，主张结合阅读和实际来学。这里用社区通知作现代练习；原书提出的具体阅读材料和实践语境，应回到引文理解。","excerptIds":["l-conscious","l-reading","l-practice"]}]}</script>
+</body>
+</html>

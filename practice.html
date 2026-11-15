@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="沿着实践、认识与再实践的路线，交互精读《实践论》。原文对照与理解练习，完全离线可用。">
+  <title>实践论 · 知与行之间</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到正文</a>
+  <aside class="sidebar" aria-label="篇目与导览">
+    <a class="brand" href="#overview" aria-label="知行 · 精读首页"><span class="brand-mark" aria-hidden="true">知<span>行</span></span><span>知行<span class="brand-caption">一本书，一条思考的路</span></span></a>
+    <a class="library-link" href="./index.html">← 精读书库</a>
+    <div class="library-label"><span id="book-title">毛泽东选集</span> <span>精读</span></div>
+    <div class="book-entry"><span class="entry-num">01</span><span><span id="entry-title">实践论</span><small id="entry-label">首篇导读 · 已完成</small></span><span class="entry-dot" aria-hidden="true"></span></div>
+    <div id="upcoming" class="upcoming"></div>
+    <nav class="section-nav" aria-label="本文导览">
+      <span class="nav-label">本文导览</span>
+      <a href="#overview"><span>01</span> 从一个问题开始</a>
+      <a href="#route"><span>02</span> <span class="nav-text" id="route-nav">走一遍认识的路</span></a>
+      <a href="#concepts"><span>03</span> <span class="nav-text" id="concepts-nav">分清两组概念</span></a>
+      <a href="#sources"><span>04</span> 回到原文</a>
+      <a href="#exercise"><span>05</span> 检验你的理解</a>
+    </nav>
+    <div class="sidebar-foot"><span class="offline-dot" aria-hidden="true"></span>离线精读样板<span id="scope-note">本页仅完成《实践论》</span></div>
+  </aside>
+  <div class="page-shell">
+    <header class="topbar"><span>阅读，不止于读过。</span><span class="edition" id="edition-label">INTERACTIVE READING / 001</span></header>
+    <main id="main-content">
+      <section id="overview" class="hero" aria-labelledby="article-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="red-rule"></span>经典精读 <span class="subtle">/</span> <span id="article-subject">认识论</span></div>
+          <h1 id="article-title"><span id="hero-title">实践论</span><span class="title-dot">。</span></h1>
+          <p class="article-meta"><span id="article-author">毛泽东</span> <span>·</span> <span id="article-date"></span></p>
+          <p class="subtitle" id="article-subtitle"></p>
+          <h2 class="hero-question" id="core-question"></h2>
+          <p class="hero-intro" id="article-intro"></p>
+          <a class="primary-button" href="#route">开始走这条路 <span aria-hidden="true">↗</span></a>
+          <span class="hero-hint" id="hero-hint">5 个阶段 · 原文对照 · 3 道练习</span>
+        </div>
+        <div class="hero-art" id="hero-art" role="img" aria-label="知与行相互推动：从实践到认识，再由认识返回实践">
+          <svg viewBox="0 0 390 360" aria-hidden="true">
+            <defs><marker id="arrow-ink" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#1c3f8b" stroke-width="1.4"/></marker><marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#a83d2e" stroke-width="1.4"/></marker></defs>
+            <circle cx="195" cy="175" r="137" fill="none" stroke="#dfdbcf" stroke-dasharray="2 7"/>
+            <circle cx="195" cy="175" r="100" fill="none" stroke="#e5e1d7"/>
+            <path d="M77 130C100 51 246 34 307 127" fill="none" stroke="#1c3f8b" stroke-width="1.6" marker-end="url(#arrow-ink)"/>
+            <path d="M313 215C269 300 131 303 79 221" fill="none" stroke="#a83d2e" stroke-width="1.6" marker-end="url(#arrow-red)"/>
+            <path d="M41 175H349M195 22V328" stroke="#e4e0d6" stroke-width="1"/>
+            <circle cx="77" cy="175" r="4" fill="#a83d2e"/><circle cx="313" cy="175" r="4" fill="#1c3f8b"/>
+            <text x="115" y="200" class="art-character">行</text><text x="217" y="200" class="art-character art-know">知</text>
+            <text x="195" y="35" text-anchor="middle" class="art-note">从 实 践 中 来</text><text x="195" y="330" text-anchor="middle" class="art-note">到 实 践 中 去</text>
+            <text x="195" y="245" text-anchor="middle" class="art-small">认识的运动，永不止步</text>
+          </svg>
+          <span class="art-caption">读懂一个循环，也读懂一次深化。</span>
+        </div>
+      </section>
+      <details class="background-note"><summary><span class="note-symbol" aria-hidden="true">i</span><span id="background-title">为什么写这篇文章？</span><span class="detail-hint">展开写作背景与阅读说明</span></summary><div class="background-body"><p class="content-label" id="background-label">编辑导读 · 背景据本书题解</p><p id="article-background"></p><div id="background-refs" class="source-links"></div></div></details>
+      <section id="core-visual" class="core-visual" aria-labelledby="visual-title" hidden></section>
+      <section id="route" class="route-section" aria-labelledby="route-title">
+        <div class="section-heading"><div><span class="section-kicker">01 / THE READING PATH</span><h2 id="route-title">走一遍，认识的路。</h2></div><span class="section-aside">点击节点，展开一步</span></div>
+        <p class="section-intro" id="route-intro">认识如何从实践中发生，又怎样回到实践？<br class="desktop-break">沿着下面五个节点，跟随一个连续的现代类比来理解。</p>
+        <div class="argument-map">
+          <div class="map-annotation" id="map-annotation"><span>从世界中获得认识</span><span>让认识回到世界</span></div>
+          <div id="stage-tabs" class="stage-tabs" role="tablist" aria-label="认识的五个阅读阶段"></div>
+          <div class="map-return" id="map-return"><svg viewBox="0 0 800 28" preserveAspectRatio="none" aria-hidden="true"><path d="M786 1V17H14V1" fill="none" stroke="currentColor" stroke-width="1"/><path d="M9 7 14 1 19 7" fill="none" stroke="currentColor" stroke-width="1"/></svg><span>新的实践，带来更深的认识</span></div>
+        </div>
+        <p class="editorial-note" id="editorial-note"></p>
+        <div class="stage-layout">
+          <div id="stage-panel" class="stage-panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-0">
+            <div class="stage-topline"><span id="stage-tag" class="content-label"></span><span id="stage-count" class="stage-count"></span></div>
+            <h3 id="stage-summary"></h3>
+            <p id="stage-explanation" class="explanation"></p>
+            <div class="analogy-block"><span class="content-label" id="analogy-label">现代类比 · 改善图书馆借阅体验</span><p id="stage-analogy"></p></div>
+            <div class="thinking-prompt"><span aria-hidden="true">↳</span><span id="stage-prompt"></span></div>
+            <div class="stage-controls"><button id="previous-stage" type="button">← 上一步</button><span>也可用方向键切换节点</span><button id="next-stage" type="button">下一步 →</button></div>
+          </div>
+          <aside class="current-sources" aria-labelledby="current-source-title"><div class="quote-heading"><span class="quote-mark" aria-hidden="true">“</span><div><span class="content-label">原文对照</span><h3 id="current-source-title">让解释有据可循</h3></div></div><div id="stage-excerpts"></div><p class="quote-footnote" id="quote-footnote">以下为本地 OCR 原文；疑似识别错误未作改写。</p></aside>
+        </div>
+        <p id="stage-announcement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <section id="concepts" class="concept-section" aria-labelledby="concepts-title"><div class="section-heading"><div><span class="section-kicker">02 / THINK IN RELATIONS</span><h2 id="concepts-title">别把相连的，读成对立的。</h2></div></div><div id="comparison-list"></div></section>
+      <section id="sources" class="sources-section" aria-labelledby="sources-title"><div class="section-heading"><div><span class="section-kicker">03 / BACK TO THE TEXT</span><h2 id="sources-title">解释之外，回到原文。</h2></div><span class="source-total" id="source-total"></span></div><p class="section-intro" id="sources-intro">引文只是精读的入口。每一条都保留了可以回查的文件行号与扫描页。</p><div class="source-notice"><p id="version-note"></p><p class="source-file">来源：<span id="source-name"></span><span id="source-location-note"> · 《实践论》标题第 3386 行，扫描页 283</span></p></div><details id="source-library" class="source-library"><summary><span id="source-library-label"></span><span aria-hidden="true">＋</span></summary><ol id="excerpt-list" class="excerpt-list"></ol></details></section>
+      <section id="exercise" class="exercise-section" aria-labelledby="exercise-title"><div class="section-heading"><div><span class="section-kicker">04 / MAKE IT YOUR OWN</span><h2 id="exercise-title">把“读过”变成“理解”。</h2></div><span class="section-aside" id="exercise-count">3 道情境判断</span></div><p class="section-intro" id="exercise-intro">回看图书馆的例子，试着分清认识过程中的不同环节。<br class="desktop-break">答错也有用：每道题都会给出解释与原文依据。</p><form id="quiz-form" novalidate><div id="quiz-questions"></div><div class="quiz-actions"><button type="submit" id="quiz-submit" class="primary-button">提交，看看理解到哪一步 <span aria-hidden="true">↗</span></button><button type="button" id="quiz-reset" class="text-button">重置练习</button></div><div id="quiz-status" class="quiz-status" role="status" aria-live="polite" aria-atomic="true"></div></form></section>
+      <footer class="page-footer"><div class="footer-line"><span id="footer-from">从实践中来</span><span class="footer-arrow" aria-hidden="true">↗</span><span id="footer-to">再向实践中去</span></div><p><span id="footer-title">《实践论》交互精读样板</span> <span>·</span> 引文 / 编辑解释 / 现代类比分层呈现</p><a href="#overview">回到开篇 ↑</a></footer>
+    </main>
+  </div>
+  <noscript><p class="noscript-notice">交互精读需要启用 JavaScript。所有脚本均在本地，无需联网；原始内容可在 data/practice.json 中阅读。</p></noscript>
+  <script id="book-data" type="application/json">{"book":{"title":"毛泽东选集","subtitle":"经典精读 · 首篇样板","source":{"file":"毛泽东选集第1-5卷.txt","sha256":"95a481fef835dc17b08db8277d3f8e192a56f274dc8640d7c03c6d17f239503d"},"upcoming":["矛盾论","论持久战"]},"article":{"id":"practice","title":"实践论","date":"1937 年 7 月","subtitle":"论认识和实践的关系——知和行的关系","question":"我们怎样知道，自己真的知道？","intro":"从接触世界，到理解世界，再回到改变世界的行动中。沿着一条认识的路线，读懂本文关于“知”与“行”的论证。","background":"本书题解说明，本文为揭露党内教条主义和经验主义，特别是看轻实践的教条主义而写。本文把认识放在人的社会性与历史发展中讨论；这里的“实践”包括生产活动、阶级斗争、政治生活、科学和艺术活动，不能只缩成个人的试错技巧。","backgroundExcerptIds":["e-background","e-social"],"versionNote":"本页引文逐字保留本地 OCR 文本，尚未与扫描图逐字校勘。标点、异体或疑似识别错误保持原貌。扫描页是文本内的“第×页”标记，不等于纸书印刷页码。","editorialNote":"五个阶段是编辑为阅读而拆解的路径，并非原文的正式章节。本文着重论述两次飞跃：从感性认识到理性认识，再从理性认识到实践。现代类比仅帮助理解，不替代原文的社会历史语境。"},"excerpts":[{"id":"e-background","text":"毛泽东的《实践论》，是为着用马克思主义的认识论观点去揭露党内的教条主义和经验主义一特别是教条主义这些主观主义的错误而写的。","lineStart":3392,"lineEnd":3392,"scanPageStart":283,"scanPageEnd":283,"label":"为什么写《实践论》 · 本书题解","sourceType":"本书题解"},{"id":"e-social","text":"人的社会实践，不限于生产活动一种形式，还有多种其他的形式，阶级斗争，政治生活，科学和艺术的活动，总之社会实际生活的一切领域都是社会的人所参加的。","lineStart":3399,"lineEnd":3399,"scanPageStart":284,"scanPageEnd":284,"label":"实践的社会范围","sourceType":"正文"},{"id":"e-standard","text":"判定认识或理论之是否真理，不是依主观上觉得如何而定，而是依客观上社会实践的结果如何而定。真理的标准只能是社会的实践。","lineStart":3406,"lineEnd":3406,"scanPageStart":285,"scanPageEnd":285,"label":"检验认识的标准","sourceType":"正文"},{"id":"e-sensory","text":"这叫做认识的感性阶段，就是感觉和印象的阶段。","lineStart":3414,"lineEnd":3414,"scanPageStart":286,"scanPageEnd":286,"label":"感性认识的含义","sourceType":"正文"},{"id":"e-concept","text":"概念这种东西已经不是事物的现象，不是事物的各个片面，不是它们的外部联系，而是抓着了事物的本质，事物的全体，事物的内部联系了。","lineStart":3415,"lineEnd":3415,"scanPageStart":286,"scanPageEnd":286,"label":"从印象走向概念","sourceType":"正文"},{"id":"e-unity","text":"感性和理性二者的性质不同，但又不是互相分离的，它们在实践的基础上统一起来了。","lineStart":3422,"lineEnd":3422,"scanPageStart":287,"scanPageEnd":287,"label":"感性与理性的联系","sourceType":"正文"},{"id":"e-indirect","text":"一切真知都是从直接经验发源的。但人不能事事直接经验，事实上多数的知识都是间接经验的东西，这就是一切古代的和外域的知识。","lineStart":3429,"lineEnd":3429,"scanPageStart":288,"scanPageEnd":288,"label":"直接经验与间接经验","sourceType":"正文"},{"id":"e-material","text":"只有感觉的材料十分丰富（不是零碎不全)和合于实际（不是错觉），才能根据这样的材料造出正确的概念和论理来。","lineStart":3456,"lineEnd":3456,"scanPageStart":291,"scanPageEnd":291,"label":"材料的丰富与真实","sourceType":"正文"},{"id":"e-relation","text":"理性认识依赖于感性认识，感性认识有待于发展到理性认识，这就是辩证唯物论的认识论。","lineStart":3466,"lineEnd":3466,"scanPageStart":292,"scanPageEnd":292,"label":"认识必须深化","sourceType":"正文"},{"id":"e-return","text":"认识从实践始，经过实践得到了理论的认识，还须再回到实践去。","lineStart":3473,"lineEnd":3473,"scanPageStart":293,"scanPageEnd":293,"label":"理论返回实践","sourceType":"正文"},{"id":"e-test","text":"要完全地解决这个问题，只有把理性的认识再回到社会实践中去，应用理论于实践，看它是否能够达到预想的目的。","lineStart":3473,"lineEnd":3473,"scanPageStart":293,"scanPageEnd":293,"label":"在行动中检验理论","sourceType":"正文"},{"id":"e-development","text":"然而对于过程的推移而言，人们的认识运动是没有完成的。任何过程，不论是属于自然界的和属于社会的，由于内部的矛盾和斗争，都是向前推移向前发展的，人们的认识运动也应跟着推移和发展。","lineStart":3487,"lineEnd":3487,"scanPageStart":295,"scanPageEnd":295,"label":"过程变化，认识也要发展","sourceType":"正文"},{"id":"e-cycle","text":"实践、认识、再实践、再认识，这种形式，循环往复以至无穷，而实践和认识之每一循环的内容，都比较地进到了高一级的程度。","lineStart":3504,"lineEnd":3504,"scanPageStart":297,"scanPageEnd":297,"label":"循环中的深化","sourceType":"正文"}],"stages":[{"id":"practice","title":"实践","summary":"认识，从接触世界开始。","tag":"起点 · 获得材料","explanation":"本文认为，认识依赖于社会实践。人们在生产、社会生活和科学等活动中接触对象，取得感觉经验。这不意味着每个人必须亲历所有事情：书本和他人的知识可以提供间接经验，但就知识的总体来源而言，它们仍与实践相连。","analogy":"社区想改善图书馆的使用体验。先去现场观察、访谈读者、记录借阅流程，接触真正的问题。阅读其他图书馆的研究也有帮助，但不能用想象替代对这个场所的了解。","excerptIds":["e-social","e-indirect"],"prompt":"我接触到的，是具体情境还是想象？"},{"id":"sensory","title":"感性认识","summary":"看见现象，积累感觉与印象。","tag":"第一步 · 丰富而真实","explanation":"这里的“感性”指感觉和印象，不等于情绪化。看到拥堵、听到抱怨、记住某次经历，都是对事物现象及外部联系的认识。它们是认识的必要材料，却还不能自动给出事物的本质或整体关系；材料也可能片面，甚至有错觉。","analogy":"你发现周末借书处总是排队，有读者说“机器太少了”。这是有价值的观察和印象，但还不能直接证明添置机器就是最有效的解决办法。需要继续记录时间、人数和具体环节。","excerptIds":["e-sensory","e-material"],"prompt":"我掌握的材料，是否丰富且合于实际？"},{"id":"rational","title":"理性认识","summary":"整理材料，理解内在联系。","tag":"第一次飞跃 · 感性 → 理性","explanation":"本文的“理性”指运用概念、判断和推理，把材料加以整理和改造，逐步理解本质、全体和内部联系，不只是保持冷静。材料多并不自然等于理解深；需要辨别、比较和分析。感性认识为理性认识提供基础，理性认识使感性认识得到深化。","analogy":"比较多日记录后，你发现队伍主要堵在人工核验环节，机器闲置时也可能排队。你提出解释：核验流程比机器数量更可能是瓶颈。这是从零散印象走向关系判断，但仍需要实践检验。","excerptIds":["e-concept","e-unity","e-relation"],"prompt":"我的解释，是否说明了现象之间的关系？"},{"id":"return","title":"再实践","summary":"让理论接受行动与结果的检验。","tag":"第二次飞跃 · 理性 → 实践","explanation":"按本文的论证，形成理论只完成了认识运动的一部分。认识还要能动地指导实践，在改造对象的过程中检验它是否符合客观实际。不能只凭解释听起来有道理就认定其正确；行动中出现的新情况，也可能要求部分乃至全部修改原来的方案。","analogy":"图书馆小范围试行预先核验，比较调整前后的等待时间与读者体验。如果排队未改善，就回看其他限制条件并修正解释。一次局部试行提供证据，但不足以替代对不同条件的持续检验。","excerptIds":["e-return","e-test","e-standard"],"prompt":"把解释付诸行动后，结果支持了什么？"},{"id":"development","title":"认识的发展","summary":"条件在变化，认识继续向前。","tag":"新的循环 · 内容的深化","explanation":"某一阶段的认识可以在实践中得到证实，但整个认识过程不会由此终结。对象与条件继续发展，人们的认识也应随之推移。这一循环不是原地重复，更不是“一次成功，永远正确”；新的实践应让认识获得更深、更具体的内容。","analogy":"新学期读者数量和借阅方式发生变化，原来的流程再次出现拥堵。团队重新调查新的情况，调整原有判断与方案。过去有效的经验仍可参考，却不能直接代替对新条件的认识。","excerptIds":["e-development","e-cycle"],"prompt":"条件改变后，我是否仍停留在旧结论？"}],"comparisons":[{"id":"sensory-rational","title":"感性认识与理性认识","leftTitle":"感性认识","left":"感觉、印象；首先接触现象、片面与外部联系。它提供认识材料，并不等于情绪。","rightTitle":"理性认识","right":"概念、判断、推理；力求理解本质、全体与内部联系。它需要加工材料，并不等于冷静。","relation":"关系：理性认识依赖感性认识，感性认识有待深化。两者在实践基础上统一，不能只靠抽象推演，也不能停在零散见闻。","excerptIds":["e-sensory","e-concept","e-relation"]},{"id":"dogma-empiricism","title":"两种片面性，怎样断开了知与行？","leftTitle":"教条主义","left":"把书本中的词句当成现成答案，拒绝或轻视具体实践的经验。片面之处在于使理论脱离实际。","rightTitle":"经验主义","right":"拘守自身片断经验，低估理论的作用和对全局的把握。片面之处在于停在局部经验。","relation":"共同问题：把理论与经验割裂。本文要求从实践取得材料、上升为理论，再让理论指导实践；不是在两个极端中任选一个。","excerptIds":["e-background","e-relation","e-return"]}],"quiz":[{"id":"q-sensory","question":"“周末借书处常排队，几位读者觉得机器太少。”这首先属于什么？","options":["感性认识：记录现象与印象，尚需分析内部联系","理性认识：已经证明拥堵的根本原因","只要是主观感受，就没有认识价值"],"answerIndex":0,"explanation":"这些是具体的观察与印象，因此首先属于感性认识。它们是必要材料，但“机器太少”尚未被证明为原因；还需丰富材料并加以分析。","excerptIds":["e-sensory","e-material"]},{"id":"q-return","question":"分析后提出“核验流程造成拥堵”的解释，接下来怎样才符合本文的论证？","options":["解释能说服大家，就可以认定永远正确","保留结论即可，行动不属于认识过程","让解释指导流程调整，在实践中检验并修正"],"answerIndex":2,"explanation":"形成理论并非认识的终点。本文要求理性认识再回到实践中，看能否达到预想目的，并依据实际结果纠正不完全或错误的认识。","excerptIds":["e-return","e-test"]},{"id":"q-development","question":"一项流程调整已经奏效，新学期条件发生变化时，应该怎样看待旧结论？","options":["既然成功过，就不再需要调查","重新认识变化的条件，使认识与方案继续发展","旧结论必然毫无价值，应全部忘记"],"answerIndex":1,"explanation":"一次实践可以完成某一阶段的具体认识，但对象仍在发展。应在原有认识的基础上继续调查和修正，而不是机械照搬或把全部经验一笔抹去。","excerptIds":["e-development","e-cycle"]}]}</script>
+</body>
+</html>

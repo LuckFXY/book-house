@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="拆出主项、谓项、量项和联项，再用数量与否定的准确位置，分辨判断之间的矛盾关系和反对关系。">
+  <title>第五讲·怎样做到判断恰当（一） · 形式逻辑通俗讲话</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到正文</a>
+  <aside class="sidebar" aria-label="篇目与导览">
+    <a class="brand" href="#overview" aria-label="知行 · 精读首页"><span class="brand-mark" aria-hidden="true">知<span>行</span></span><span>知行<span class="brand-caption">一本书，一条思考的路</span></span></a>
+    <a class="library-link" href="./index.html">← 精读书库</a>
+    <div class="library-label"><span id="book-title">毛泽东选集</span> <span>精读</span></div>
+    <div class="book-entry"><span class="entry-num">01</span><span><span id="entry-title">实践论</span><small id="entry-label">首篇导读 · 已完成</small></span><span class="entry-dot" aria-hidden="true"></span></div>
+    <div id="upcoming" class="upcoming"></div>
+    <nav class="section-nav" aria-label="本文导览">
+      <span class="nav-label">本文导览</span>
+      <a href="#overview"><span>01</span> 从一个问题开始</a>
+      <a href="#route"><span>02</span> <span class="nav-text" id="route-nav">走一遍认识的路</span></a>
+      <a href="#concepts"><span>03</span> <span class="nav-text" id="concepts-nav">分清两组概念</span></a>
+      <a href="#sources"><span>04</span> 回到原文</a>
+      <a href="#exercise"><span>05</span> 检验你的理解</a>
+    </nav>
+    <div class="sidebar-foot"><span class="offline-dot" aria-hidden="true"></span>离线精读样板<span id="scope-note">本页仅完成《实践论》</span></div>
+  </aside>
+  <div class="page-shell">
+    <header class="topbar"><span>阅读，不止于读过。</span><span class="edition" id="edition-label">INTERACTIVE READING / 001</span></header>
+    <main id="main-content">
+      <section id="overview" class="hero" aria-labelledby="article-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="red-rule"></span>经典精读 <span class="subtle">/</span> <span id="article-subject">认识论</span></div>
+          <h1 id="article-title"><span id="hero-title">实践论</span><span class="title-dot">。</span></h1>
+          <p class="article-meta"><span id="article-author">毛泽东</span> <span>·</span> <span id="article-date"></span></p>
+          <p class="subtitle" id="article-subtitle"></p>
+          <h2 class="hero-question" id="core-question"></h2>
+          <p class="hero-intro" id="article-intro"></p>
+          <a class="primary-button" href="#route">开始走这条路 <span aria-hidden="true">↗</span></a>
+          <span class="hero-hint" id="hero-hint">5 个阶段 · 原文对照 · 3 道练习</span>
+        </div>
+        <div class="hero-art" id="hero-art" role="img" aria-label="知与行相互推动：从实践到认识，再由认识返回实践">
+          <svg viewBox="0 0 390 360" aria-hidden="true">
+            <defs><marker id="arrow-ink" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#1c3f8b" stroke-width="1.4"/></marker><marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#a83d2e" stroke-width="1.4"/></marker></defs>
+            <circle cx="195" cy="175" r="137" fill="none" stroke="#dfdbcf" stroke-dasharray="2 7"/>
+            <circle cx="195" cy="175" r="100" fill="none" stroke="#e5e1d7"/>
+            <path d="M77 130C100 51 246 34 307 127" fill="none" stroke="#1c3f8b" stroke-width="1.6" marker-end="url(#arrow-ink)"/>
+            <path d="M313 215C269 300 131 303 79 221" fill="none" stroke="#a83d2e" stroke-width="1.6" marker-end="url(#arrow-red)"/>
+            <path d="M41 175H349M195 22V328" stroke="#e4e0d6" stroke-width="1"/>
+            <circle cx="77" cy="175" r="4" fill="#a83d2e"/><circle cx="313" cy="175" r="4" fill="#1c3f8b"/>
+            <text x="115" y="200" class="art-character">行</text><text x="217" y="200" class="art-character art-know">知</text>
+            <text x="195" y="35" text-anchor="middle" class="art-note">从 实 践 中 来</text><text x="195" y="330" text-anchor="middle" class="art-note">到 实 践 中 去</text>
+            <text x="195" y="245" text-anchor="middle" class="art-small">认识的运动，永不止步</text>
+          </svg>
+          <span class="art-caption">读懂一个循环，也读懂一次深化。</span>
+        </div>
+      </section>
+      <details class="background-note"><summary><span class="note-symbol" aria-hidden="true">i</span><span id="background-title">为什么写这篇文章？</span><span class="detail-hint">展开写作背景与阅读说明</span></summary><div class="background-body"><p class="content-label" id="background-label">编辑导读 · 背景据本书题解</p><p id="article-background"></p><div id="background-refs" class="source-links"></div></div></details>
+      <section id="core-visual" class="core-visual" aria-labelledby="visual-title" hidden></section>
+      <section id="route" class="route-section" aria-labelledby="route-title">
+        <div class="section-heading"><div><span class="section-kicker">01 / THE READING PATH</span><h2 id="route-title">走一遍，认识的路。</h2></div><span class="section-aside">点击节点，展开一步</span></div>
+        <p class="section-intro" id="route-intro">认识如何从实践中发生，又怎样回到实践？<br class="desktop-break">沿着下面五个节点，跟随一个连续的现代类比来理解。</p>
+        <div class="argument-map">
+          <div class="map-annotation" id="map-annotation"><span>从世界中获得认识</span><span>让认识回到世界</span></div>
+          <div id="stage-tabs" class="stage-tabs" role="tablist" aria-label="认识的五个阅读阶段"></div>
+          <div class="map-return" id="map-return"><svg viewBox="0 0 800 28" preserveAspectRatio="none" aria-hidden="true"><path d="M786 1V17H14V1" fill="none" stroke="currentColor" stroke-width="1"/><path d="M9 7 14 1 19 7" fill="none" stroke="currentColor" stroke-width="1"/></svg><span>新的实践，带来更深的认识</span></div>
+        </div>
+        <p class="editorial-note" id="editorial-note"></p>
+        <div class="stage-layout">
+          <div id="stage-panel" class="stage-panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-0">
+            <div class="stage-topline"><span id="stage-tag" class="content-label"></span><span id="stage-count" class="stage-count"></span></div>
+            <h3 id="stage-summary"></h3>
+            <p id="stage-explanation" class="explanation"></p>
+            <div class="analogy-block"><span class="content-label" id="analogy-label">现代类比 · 改善图书馆借阅体验</span><p id="stage-analogy"></p></div>
+            <div class="thinking-prompt"><span aria-hidden="true">↳</span><span id="stage-prompt"></span></div>
+            <div class="stage-controls"><button id="previous-stage" type="button">← 上一步</button><span>也可用方向键切换节点</span><button id="next-stage" type="button">下一步 →</button></div>
+          </div>
+          <aside class="current-sources" aria-labelledby="current-source-title"><div class="quote-heading"><span class="quote-mark" aria-hidden="true">“</span><div><span class="content-label">原文对照</span><h3 id="current-source-title">让解释有据可循</h3></div></div><div id="stage-excerpts"></div><p class="quote-footnote" id="quote-footnote">以下为本地 OCR 原文；疑似识别错误未作改写。</p></aside>
+        </div>
+        <p id="stage-announcement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <section id="concepts" class="concept-section" aria-labelledby="concepts-title"><div class="section-heading"><div><span class="section-kicker">02 / THINK IN RELATIONS</span><h2 id="concepts-title">别把相连的，读成对立的。</h2></div></div><div id="comparison-list"></div></section>
+      <section id="sources" class="sources-section" aria-labelledby="sources-title"><div class="section-heading"><div><span class="section-kicker">03 / BACK TO THE TEXT</span><h2 id="sources-title">解释之外，回到原文。</h2></div><span class="source-total" id="source-total"></span></div><p class="section-intro" id="sources-intro">引文只是精读的入口。每一条都保留了可以回查的文件行号与扫描页。</p><div class="source-notice"><p id="version-note"></p><p class="source-file">来源：<span id="source-name"></span><span id="source-location-note"> · 《实践论》标题第 3386 行，扫描页 283</span></p></div><details id="source-library" class="source-library"><summary><span id="source-library-label"></span><span aria-hidden="true">＋</span></summary><ol id="excerpt-list" class="excerpt-list"></ol></details></section>
+      <section id="exercise" class="exercise-section" aria-labelledby="exercise-title"><div class="section-heading"><div><span class="section-kicker">04 / MAKE IT YOUR OWN</span><h2 id="exercise-title">把“读过”变成“理解”。</h2></div><span class="section-aside" id="exercise-count">3 道情境判断</span></div><p class="section-intro" id="exercise-intro">回看图书馆的例子，试着分清认识过程中的不同环节。<br class="desktop-break">答错也有用：每道题都会给出解释与原文依据。</p><form id="quiz-form" novalidate><div id="quiz-questions"></div><div class="quiz-actions"><button type="submit" id="quiz-submit" class="primary-button">提交，看看理解到哪一步 <span aria-hidden="true">↗</span></button><button type="button" id="quiz-reset" class="text-button">重置练习</button></div><div id="quiz-status" class="quiz-status" role="status" aria-live="polite" aria-atomic="true"></div></form></section>
+      <footer class="page-footer"><div class="footer-line"><span id="footer-from">从实践中来</span><span class="footer-arrow" aria-hidden="true">↗</span><span id="footer-to">再向实践中去</span></div><p><span id="footer-title">《实践论》交互精读样板</span> <span>·</span> 引文 / 编辑解释 / 现代类比分层呈现</p><a href="#overview">回到开篇 ↑</a></footer>
+    </main>
+  </div>
+  <noscript><p class="noscript-notice">交互精读需要启用 JavaScript。所有脚本均在本地，无需联网；原始内容可在 data/logic-05.json 中阅读。</p></noscript>
+  <script id="book-data" type="application/json">{"book":{"id":"formal-logic-1976","title":"形式逻辑通俗讲话","author":"北京市建筑木材厂《形式逻辑通俗讲话》编写组、北京师范大学政治教育系","source":{"file":"形式逻辑通俗讲话1976.txt","sha256":"55ebaa5c14af3414d9f3635ef2c9bfd380a885d145503d8f78dc5efb63a42054","kind":"txt-scan-markers"},"upcoming":[]},"article":{"id":"logic-05","title":"第五讲·怎样做到判断恰当（一）","date":"1976 年 1 月版","subtitle":"《形式逻辑通俗讲话》第五讲 · 完整单元","question":"“不全对”和“全不对”，为什么不能互换？","intro":"拆出主项、谓项、量项和联项，再用数量与否定的准确位置，分辨判断之间的矛盾关系和反对关系。","background":"本页拆解北京市建筑木材厂《形式逻辑通俗讲话》编写组、北京师范大学政治教育系合编的1976年教材。原书的政治判断、历史评价与科学举例按作者当时的论述呈现；编辑解释和现代设例独立标识，不把这些例子当作今天的事实判定。","backgroundExcerptIds":["e-parts"],"versionNote":"引文逐字保留本地 OCR 文本，未作扫描图逐字校勘。出处为原 TXT 行号及最近的“第×页”文本标记；文本扫描页标记不等于纸书印刷页或 PDF 页序。","editorialNote":"五个节点为编辑组织。本讲对当关系的现代设例均使用明确存在的对象，保持主谓项、时间和条件相同；全称肯定与全称否定的反对关系限定在非空对象范围，不将传统教材表述无条件推广到空类。核心表是编辑整理，并非原书表格。","sourceRange":{"lineStart":595,"lineEnd":756},"presentation":{"subject":"形式逻辑","editionLabel":"LOGIC / 05","entryLabel":"第五讲 · 完整单元","scopeNote":"本书共 12 讲；单元交付状态见书库","heroTitle":"怎样做到判断恰当（一）","heroCaption":"四个组成部分 → 质与量组合 → 数量与否定 → 矛盾关系 → 反对关系","routeTitle":"“不全对”和“全不对”，为什么不能互换？","routeIntro":"拆出主项、谓项、量项和联项，再用数量与否定的准确位置，分辨判断之间的矛盾关系和反对关系。 点击节点，结合现代设例和原文阅读。","routeAriaLabel":"第五讲的5个阅读节点","analogyLabel":"现代设例 · 约定条件下的教学例子","backgroundTitle":"这本教材怎样提出问题？","backgroundLabel":"编辑导读 · 本书的编写语境","sourcesIntro":"以下精选原文覆盖第五讲，定位到原始 TXT 行号与文本扫描页。","sourceLocationNote":"第五讲第 595–756 行；版次见原文件第 16 行","quoteFootnote":"以下为本地 OCR TXT 原文；文本扫描页不是 PDF 或纸书页码，疑似误字未作改写。","exerciseIntro":"根据本讲规则判断现代设例，并回到引用原文核对依据。","footerFrom":"读清概念与规则","footerTo":"说出判断与理由","mapGroups":[{"label":"第五讲 · 完整阅读路径","span":5}],"returnLabel":null},"visual":{"title":"矛盾与反对：条件相同才比较","caption":"编辑依据本讲整理；现代设例采用明示约定，不是原书表格。 下表保持S、P、时间与条件相同，且S非空。","columns":["判断对","能同真吗","能同假吗","由一假推另一真"],"rows":[["所有S是P / 有S不是P","不能","不能","能"],["所有S不是P / 有S是P","不能","不能","能"],["所有S是P / 所有S不是P","不能（S非空）","可以","不能"]],"excerptIds":["e-contradiction","e-contrary","e-difference","e-same"]}},"excerpts":[{"id":"e-parts","text":"简单判断一殷都具有上述四个组成部分，就是：主项、谓项、联项和量项。","lineStart":618,"lineEnd":618,"scanPageStart":50,"scanPageEnd":50,"label":"四个组成部分","sourceType":"正文"},{"id":"e-link","text":"“是”用来断定作为主项的事物具有作为谓项的性质，、叫做肯定联项。","lineStart":616,"lineEnd":616,"scanPageStart":50,"scanPageEnd":50,"label":"肯定联项","sourceType":"正文"},{"id":"e-quantity","text":"它们是用来表示判断的对象即主项的数量或范围的，叫量项。","lineStart":617,"lineEnd":617,"scanPageStart":50,"scanPageEnd":50,"label":"量项的作用","sourceType":"正文"},{"id":"e-six","text":"单称肯定判断，单称否定判断，特称肯定判断，特称否定判断，全称肯定判断，全称否定判断。","lineStart":632,"lineEnd":632,"scanPageStart":51,"scanPageEnd":51,"label":"六种基本形式","sourceType":"正文"},{"id":"e-some","text":"特称量项“有些”或“有的”，在数量上是不确定的，它的意思是至少有一个。","lineStart":639,"lineEnd":639,"scanPageStart":52,"scanPageEnd":52,"label":"有些不自动排除全部","sourceType":"正文"},{"id":"e-all","text":"全称肯定判断是对一类事物的全部有所肯定，全称否定判断是对一类事物的全部有所否定。","lineStart":642,"lineEnd":642,"scanPageStart":52,"scanPageEnd":52,"label":"全称断定的范围","sourceType":"正文"},{"id":"e-appropriate","text":"要准确地理解一句话的意思，确定它所表达的判断的形式，要作出恰当的判断，都必须准确地使用量项和联项。","lineStart":660,"lineEnd":660,"scanPageStart":53,"scanPageEnd":53,"label":"准确使用量项联项","sourceType":"正文"},{"id":"e-notall","text":"前者表达了一个全称否定判断，“他的看法都不是对的。”而后者则相等于一个特称否定判断：“他有的看法不对。”","lineStart":698,"lineEnd":698,"scanPageStart":55,"scanPageEnd":55,"label":"全不与不全","sourceType":"正文"},{"id":"e-contradiction","text":"这两个判断是互相矛盾的，不能同真，也不可能同假。","lineStart":721,"lineEnd":721,"scanPageStart":57,"scanPageEnd":57,"label":"矛盾关系的真假约束","sourceType":"正文"},{"id":"e-ai","text":"全称肯定判断与特称否定判断之间的关系，也是矛盾关系。","lineStart":722,"lineEnd":722,"scanPageStart":57,"scanPageEnd":57,"label":"全称肯定与特称否定","sourceType":"正文"},{"id":"e-ei","text":"全称否定判断与特称肯定判断之间的关系，也是矛盾关系。","lineStart":727,"lineEnd":727,"scanPageStart":57,"scanPageEnd":57,"label":"全称否定与特称肯定","sourceType":"正文"},{"id":"e-contrary","text":"甲、乙两判断不能同真，但是可能同假，因此甲、乙互相反对。","lineStart":736,"lineEnd":736,"scanPageStart":58,"scanPageEnd":58,"label":"反对关系","sourceType":"正文"},{"id":"e-difference","text":"因为可能同假，所以由一个判断假却不能断定另一个判断必真。","lineStart":745,"lineEnd":745,"scanPageStart":59,"scanPageEnd":59,"label":"反对不是矛盾","sourceType":"正文"},{"id":"e-same","text":"上述两种关系，只存在于主项和谓项都相同的两个判断之间","lineStart":749,"lineEnd":749,"scanPageStart":59,"scanPageEnd":59,"label":"关系比较的同项前提","sourceType":"正文"}],"stages":[{"id":"structure","title":"四个组成部分","mini":"四个组成部分","summary":"区分对象、性质、数量和肯否定。","tag":"阅读路径 · 四个组成部分","explanation":"本讲讨论用主谓句表达的简单性质判断。主项是判断的对象，谓项表示所断定的性质；量项说明对象的数量或范围，联项说明肯定还是否定。实际句子可能省略一些部分，须靠上下文补出其含意，不能把语法词位直接当作全部逻辑结构。","analogy":"“有些预约单不是有效单”：主项为预约单，谓项为有效单，量项为有些，联项为不是。此处先分析结构，尚不判断记录是否支持它。","excerptIds":["e-parts","e-link","e-quantity"],"prompt":"我能分别指出四个部分吗？"},{"id":"forms","title":"质与量组合","mini":"质与量组合","summary":"肯否定×单称、特称、全称。","tag":"阅读路径 · 质与量组合","explanation":"肯定或否定是按质区分，单称、特称、全称是按量区分，组合成本讲的六种形式。逻辑中的“有些”只断定至少有一个，不自动表示“有些但并非全部”；若要表达并非全部，应另加根据或断定。","analogy":"设有三张单甲乙丙。“甲单有效”是单称肯定；“有些单有效”至少要求一张有效；“所有单有效”要求三张都有效。全部有效时，“有些有效”同样可以为真。","excerptIds":["e-six","e-some","e-all"],"prompt":"“有些”是否被我误读成“只有一部分”？"},{"id":"precision","title":"数量与否定","mini":"数量与否定","summary":"把“全部”和“不”的作用范围放准。","tag":"阅读路径 · 数量与否定","explanation":"量项和联项影响判断的形式。事实只支持部分时，不能擅自扩成全部；证据支持更确切比例时，可以用恰当限定。否定的位置同样关键：“全不对”是否定全部，“不全对”只说至少有一项不对，仍容许有对的。","analogy":"甲乙两条建议中甲对、乙不对，因此“这些建议不全对”为真，“这些建议全不对”为假。“没有一个不确认”则是双重否定，不能草率读成无人确认。","excerptIds":["e-appropriate","e-notall","e-some"],"prompt":"否定的是某种性质，还是“全部”的范围？"},{"id":"contradiction","title":"矛盾关系","mini":"矛盾关系","summary":"同项、同条件下，恰好一真一假。","tag":"阅读路径 · 矛盾关系","explanation":"本讲给出单称肯定与单称否定、全称肯定与特称否定、全称否定与特称肯定三组矛盾关系。比较须保持主项、谓项以及时间条件一致。找到一个真实反例就可否定相应全称断定；不能用另一性质的事实冒充反例。","analogy":"同一批甲乙丙单据，在同一时刻，“所有单据都有效”与“有单据无效”不能同真或同假。若乙无效，后一项为真，前一项为假。","excerptIds":["e-contradiction","e-ai","e-ei","e-same"],"prompt":"反例真的属于同一对象范围并否定同一性质吗？"},{"id":"contrary","title":"反对关系","mini":"反对关系","summary":"不能同真，却可能同时为假。","tag":"阅读路径 · 反对关系","explanation":"“所有S是P”与“所有S不是P”在本书的非空对象讨论中互相反对。这里明确要求S至少有一个对象，并保持同项、同时间和同条件；不把这一传统关系无条件搬到空类。两项可能同假，因此否定一个全称极端，不等于证明另一个极端。","analogy":"同一批确有甲乙两张单，甲有效、乙无效，则“所有单有效”和“所有单无效”同时为假。只知道“并非所有单有效”，还不能判定“所有单无效”。","excerptIds":["e-contrary","e-difference","e-same"],"prompt":"我是否把“不是全都如此”误当成“全都不如此”？"}],"comparisons":[{"id":"some-all","title":"有些与所有","leftTitle":"有些S是P","left":"至少有一个S是P；本身不排除全部S是P。","rightTitle":"所有S是P","right":"断定范围覆盖全部S，不能仅凭部分观察就下全称结论。","relation":"按实际选择量项。现代设例均明确给出对象，避免在未说明对象是否存在时套用传统对当关系。","excerptIds":["e-some","e-all","e-appropriate"]},{"id":"oppositions","title":"矛盾与反对","leftTitle":"矛盾关系","left":"不能同真，也不能同假；一真一假。","rightTitle":"反对关系","right":"不能同真，可以同假；一假不能推出另一真。","relation":"比较时主谓项和条件相同；本页的全称反对例子另外明确S非空。","excerptIds":["e-contradiction","e-contrary","e-difference","e-same"]}],"quiz":[{"id":"q-some","question":"在本讲的逻辑用法中，“有些单据有效”最低限度断定什么？","options":["恰好一张有效","至少一张有效，并不排除全部有效","一定有无效单据"],"answerIndex":1,"explanation":"“有些”表示至少有一个，数量不确定；要断定不是全部，还需其他根据，不能从有些自动推出。","excerptIds":["e-some"]},{"id":"q-notall","question":"甲乙两条建议中甲对、乙不对。哪句符合设定？","options":["建议全不对","建议全对","建议不全对"],"answerIndex":2,"explanation":"不全对表示至少有一条不对，符合乙的情况；全不对还会否定甲，而设定中甲对。","excerptIds":["e-notall"]},{"id":"q-contrary","question":"同一批确有两张单，已知“所有单有效”为假，能直接推出“所有单无效”为真吗？","options":["不能，可能一张有效一张无效","能，只要前者是假后者就真","能，两个全称句永远互相矛盾"],"answerIndex":0,"explanation":"在同项、非空和同条件下，两句是反对关系，可以同假；一有效一无效就是反例。它们不是矛盾关系。","excerptIds":["e-contrary","e-difference","e-same"]}]}</script>
+</body>
+</html>

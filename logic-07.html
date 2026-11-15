@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="先找前提与结论的关系，再把前提真实性与推理形式分开检查，为演绎、归纳和类比的后续学习建立框架。">
+  <title>第七讲·推理要有逻辑性 · 形式逻辑通俗讲话</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到正文</a>
+  <aside class="sidebar" aria-label="篇目与导览">
+    <a class="brand" href="#overview" aria-label="知行 · 精读首页"><span class="brand-mark" aria-hidden="true">知<span>行</span></span><span>知行<span class="brand-caption">一本书，一条思考的路</span></span></a>
+    <a class="library-link" href="./index.html">← 精读书库</a>
+    <div class="library-label"><span id="book-title">毛泽东选集</span> <span>精读</span></div>
+    <div class="book-entry"><span class="entry-num">01</span><span><span id="entry-title">实践论</span><small id="entry-label">首篇导读 · 已完成</small></span><span class="entry-dot" aria-hidden="true"></span></div>
+    <div id="upcoming" class="upcoming"></div>
+    <nav class="section-nav" aria-label="本文导览">
+      <span class="nav-label">本文导览</span>
+      <a href="#overview"><span>01</span> 从一个问题开始</a>
+      <a href="#route"><span>02</span> <span class="nav-text" id="route-nav">走一遍认识的路</span></a>
+      <a href="#concepts"><span>03</span> <span class="nav-text" id="concepts-nav">分清两组概念</span></a>
+      <a href="#sources"><span>04</span> 回到原文</a>
+      <a href="#exercise"><span>05</span> 检验你的理解</a>
+    </nav>
+    <div class="sidebar-foot"><span class="offline-dot" aria-hidden="true"></span>离线精读样板<span id="scope-note">本页仅完成《实践论》</span></div>
+  </aside>
+  <div class="page-shell">
+    <header class="topbar"><span>阅读，不止于读过。</span><span class="edition" id="edition-label">INTERACTIVE READING / 001</span></header>
+    <main id="main-content">
+      <section id="overview" class="hero" aria-labelledby="article-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="red-rule"></span>经典精读 <span class="subtle">/</span> <span id="article-subject">认识论</span></div>
+          <h1 id="article-title"><span id="hero-title">实践论</span><span class="title-dot">。</span></h1>
+          <p class="article-meta"><span id="article-author">毛泽东</span> <span>·</span> <span id="article-date"></span></p>
+          <p class="subtitle" id="article-subtitle"></p>
+          <h2 class="hero-question" id="core-question"></h2>
+          <p class="hero-intro" id="article-intro"></p>
+          <a class="primary-button" href="#route">开始走这条路 <span aria-hidden="true">↗</span></a>
+          <span class="hero-hint" id="hero-hint">5 个阶段 · 原文对照 · 3 道练习</span>
+        </div>
+        <div class="hero-art" id="hero-art" role="img" aria-label="知与行相互推动：从实践到认识，再由认识返回实践">
+          <svg viewBox="0 0 390 360" aria-hidden="true">
+            <defs><marker id="arrow-ink" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#1c3f8b" stroke-width="1.4"/></marker><marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#a83d2e" stroke-width="1.4"/></marker></defs>
+            <circle cx="195" cy="175" r="137" fill="none" stroke="#dfdbcf" stroke-dasharray="2 7"/>
+            <circle cx="195" cy="175" r="100" fill="none" stroke="#e5e1d7"/>
+            <path d="M77 130C100 51 246 34 307 127" fill="none" stroke="#1c3f8b" stroke-width="1.6" marker-end="url(#arrow-ink)"/>
+            <path d="M313 215C269 300 131 303 79 221" fill="none" stroke="#a83d2e" stroke-width="1.6" marker-end="url(#arrow-red)"/>
+            <path d="M41 175H349M195 22V328" stroke="#e4e0d6" stroke-width="1"/>
+            <circle cx="77" cy="175" r="4" fill="#a83d2e"/><circle cx="313" cy="175" r="4" fill="#1c3f8b"/>
+            <text x="115" y="200" class="art-character">行</text><text x="217" y="200" class="art-character art-know">知</text>
+            <text x="195" y="35" text-anchor="middle" class="art-note">从 实 践 中 来</text><text x="195" y="330" text-anchor="middle" class="art-note">到 实 践 中 去</text>
+            <text x="195" y="245" text-anchor="middle" class="art-small">认识的运动，永不止步</text>
+          </svg>
+          <span class="art-caption">读懂一个循环，也读懂一次深化。</span>
+        </div>
+      </section>
+      <details class="background-note"><summary><span class="note-symbol" aria-hidden="true">i</span><span id="background-title">为什么写这篇文章？</span><span class="detail-hint">展开写作背景与阅读说明</span></summary><div class="background-body"><p class="content-label" id="background-label">编辑导读 · 背景据本书题解</p><p id="article-background"></p><div id="background-refs" class="source-links"></div></div></details>
+      <section id="core-visual" class="core-visual" aria-labelledby="visual-title" hidden></section>
+      <section id="route" class="route-section" aria-labelledby="route-title">
+        <div class="section-heading"><div><span class="section-kicker">01 / THE READING PATH</span><h2 id="route-title">走一遍，认识的路。</h2></div><span class="section-aside">点击节点，展开一步</span></div>
+        <p class="section-intro" id="route-intro">认识如何从实践中发生，又怎样回到实践？<br class="desktop-break">沿着下面五个节点，跟随一个连续的现代类比来理解。</p>
+        <div class="argument-map">
+          <div class="map-annotation" id="map-annotation"><span>从世界中获得认识</span><span>让认识回到世界</span></div>
+          <div id="stage-tabs" class="stage-tabs" role="tablist" aria-label="认识的五个阅读阶段"></div>
+          <div class="map-return" id="map-return"><svg viewBox="0 0 800 28" preserveAspectRatio="none" aria-hidden="true"><path d="M786 1V17H14V1" fill="none" stroke="currentColor" stroke-width="1"/><path d="M9 7 14 1 19 7" fill="none" stroke="currentColor" stroke-width="1"/></svg><span>新的实践，带来更深的认识</span></div>
+        </div>
+        <p class="editorial-note" id="editorial-note"></p>
+        <div class="stage-layout">
+          <div id="stage-panel" class="stage-panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-0">
+            <div class="stage-topline"><span id="stage-tag" class="content-label"></span><span id="stage-count" class="stage-count"></span></div>
+            <h3 id="stage-summary"></h3>
+            <p id="stage-explanation" class="explanation"></p>
+            <div class="analogy-block"><span class="content-label" id="analogy-label">现代类比 · 改善图书馆借阅体验</span><p id="stage-analogy"></p></div>
+            <div class="thinking-prompt"><span aria-hidden="true">↳</span><span id="stage-prompt"></span></div>
+            <div class="stage-controls"><button id="previous-stage" type="button">← 上一步</button><span>也可用方向键切换节点</span><button id="next-stage" type="button">下一步 →</button></div>
+          </div>
+          <aside class="current-sources" aria-labelledby="current-source-title"><div class="quote-heading"><span class="quote-mark" aria-hidden="true">“</span><div><span class="content-label">原文对照</span><h3 id="current-source-title">让解释有据可循</h3></div></div><div id="stage-excerpts"></div><p class="quote-footnote" id="quote-footnote">以下为本地 OCR 原文；疑似识别错误未作改写。</p></aside>
+        </div>
+        <p id="stage-announcement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <section id="concepts" class="concept-section" aria-labelledby="concepts-title"><div class="section-heading"><div><span class="section-kicker">02 / THINK IN RELATIONS</span><h2 id="concepts-title">别把相连的，读成对立的。</h2></div></div><div id="comparison-list"></div></section>
+      <section id="sources" class="sources-section" aria-labelledby="sources-title"><div class="section-heading"><div><span class="section-kicker">03 / BACK TO THE TEXT</span><h2 id="sources-title">解释之外，回到原文。</h2></div><span class="source-total" id="source-total"></span></div><p class="section-intro" id="sources-intro">引文只是精读的入口。每一条都保留了可以回查的文件行号与扫描页。</p><div class="source-notice"><p id="version-note"></p><p class="source-file">来源：<span id="source-name"></span><span id="source-location-note"> · 《实践论》标题第 3386 行，扫描页 283</span></p></div><details id="source-library" class="source-library"><summary><span id="source-library-label"></span><span aria-hidden="true">＋</span></summary><ol id="excerpt-list" class="excerpt-list"></ol></details></section>
+      <section id="exercise" class="exercise-section" aria-labelledby="exercise-title"><div class="section-heading"><div><span class="section-kicker">04 / MAKE IT YOUR OWN</span><h2 id="exercise-title">把“读过”变成“理解”。</h2></div><span class="section-aside" id="exercise-count">3 道情境判断</span></div><p class="section-intro" id="exercise-intro">回看图书馆的例子，试着分清认识过程中的不同环节。<br class="desktop-break">答错也有用：每道题都会给出解释与原文依据。</p><form id="quiz-form" novalidate><div id="quiz-questions"></div><div class="quiz-actions"><button type="submit" id="quiz-submit" class="primary-button">提交，看看理解到哪一步 <span aria-hidden="true">↗</span></button><button type="button" id="quiz-reset" class="text-button">重置练习</button></div><div id="quiz-status" class="quiz-status" role="status" aria-live="polite" aria-atomic="true"></div></form></section>
+      <footer class="page-footer"><div class="footer-line"><span id="footer-from">从实践中来</span><span class="footer-arrow" aria-hidden="true">↗</span><span id="footer-to">再向实践中去</span></div><p><span id="footer-title">《实践论》交互精读样板</span> <span>·</span> 引文 / 编辑解释 / 现代类比分层呈现</p><a href="#overview">回到开篇 ↑</a></footer>
+    </main>
+  </div>
+  <noscript><p class="noscript-notice">交互精读需要启用 JavaScript。所有脚本均在本地，无需联网；原始内容可在 data/logic-07.json 中阅读。</p></noscript>
+  <script id="book-data" type="application/json">{"book":{"id":"formal-logic-1976","title":"形式逻辑通俗讲话","author":"北京市建筑木材厂《形式逻辑通俗讲话》编写组、北京师范大学政治教育系","source":{"file":"形式逻辑通俗讲话1976.txt","sha256":"55ebaa5c14af3414d9f3635ef2c9bfd380a885d145503d8f78dc5efb63a42054","kind":"txt-scan-markers"},"upcoming":[]},"article":{"id":"logic-07","title":"第七讲·推理要有逻辑性","date":"1976 年 1 月版","subtitle":"《形式逻辑通俗讲话》第七讲 · 完整单元","question":"有了“所以”，就真的推出结论了吗？","intro":"先找前提与结论的关系，再把前提真实性与推理形式分开检查，为演绎、归纳和类比的后续学习建立框架。","background":"本页拆解北京市建筑木材厂《形式逻辑通俗讲话》编写组、北京师范大学政治教育系合编的1976年教材。原书的政治判断、历史评价与科学举例按作者当时的论述呈现；编辑解释和现代设例独立标识，不把这些例子当作今天的事实判定。","backgroundExcerptIds":["e-inference"],"versionNote":"引文逐字保留本地 OCR 文本，未作扫描图逐字校勘。出处为原 TXT 行号及最近的“第×页”文本标记；文本扫描页标记不等于纸书印刷页或 PDF 页序。","editorialNote":"阅读路径为编辑组织，不是原书新增章节。现代类比是约定条件下的教学设例，其逻辑与原文规则对应，不能替代实际调查。","sourceRange":{"lineStart":930,"lineEnd":1015},"presentation":{"subject":"形式逻辑","editionLabel":"LOGIC / 07","entryLabel":"第七讲 · 完整单元","scopeNote":"本书共 12 讲；单元交付状态见书库","heroTitle":"推理要有逻辑性","heroCaption":"前提与结论 → 别只看所以 → 认识与论证 → 前提与形式 → 进入不同推理","routeTitle":"有了“所以”，就真的推出结论了吗？","routeIntro":"先找前提与结论的关系，再把前提真实性与推理形式分开检查，为演绎、归纳和类比的后续学习建立框架。 点击节点，结合现代设例和原文阅读。","routeAriaLabel":"第七讲的5个阅读节点","analogyLabel":"现代设例 · 约定条件下的教学例子","backgroundTitle":"这本教材怎样提出问题？","backgroundLabel":"编辑导读 · 本书的编写语境","sourcesIntro":"以下精选原文覆盖第七讲，定位到原始 TXT 行号与文本扫描页。","sourceLocationNote":"第七讲第 930–1015 行；版次见原文件第 16 行","quoteFootnote":"以下为本地 OCR TXT 原文；文本扫描页不是 PDF 或纸书页码，疑似误字未作改写。","exerciseIntro":"根据本讲规则判断现代设例，并回到引用原文核对依据。","footerFrom":"读清概念与规则","footerTo":"说出判断与理由","mapGroups":[{"label":"第七讲 · 完整阅读路径","span":5}],"returnLabel":null},"visual":{"title":"真实前提与正确形式要分别核对","caption":"编辑依据本讲整理；现代设例采用明示约定，不是原书表格。","columns":["前提真实","演绎形式正确","能够保证什么"],"rows":[["是","是","可保证该演绎结论真实"],["否或未知","是","不能据此保证现实结论"],["是","否或未知","不能据此保证结论"]],"excerptIds":["e-two","e-combination","e-boundary"]}},"excerpts":[{"id":"e-inference","text":"在形式逻辑中，把这种从一个或几个已有判断推出一·个新判断的思维形式，，叫做推理。","lineStart":944,"lineEnd":944,"scanPageStart":74,"scanPageEnd":74,"label":"推理的界定","sourceType":"正文"},{"id":"e-premise","text":"任何一个推理都是由两部分组成的，一部分是已有的判断，叫做前提；另一部分是从已有判断推出的新判断，叫做结论。","lineStart":944,"lineEnd":944,"scanPageStart":74,"scanPageEnd":74,"label":"前提与结论","sourceType":"正文"},{"id":"e-sentence","text":"有的复句或句群并不表达推理。","lineStart":945,"lineEnd":945,"scanPageStart":74,"scanPageEnd":74,"label":"并非所有复句都是推理","sourceType":"正文"},{"id":"e-marker","text":"有时，在一个推理中只有“因此”或“所以”，.而没有“由于”或“因为”，甚至既没有“因为”或“由于”，又没有“所以”或“因此”，但仔细分析一下，后面的判断是从前面的判断推出来的，它仍然是一个推理。","lineStart":947,"lineEnd":947,"scanPageStart":74,"scanPageEnd":74,"label":"推理不依赖标志词齐全","sourceType":"正文"},{"id":"e-invalidso","text":"从前者推不出后者。因此，这段话里用“所以”是不妥当的。","lineStart":957,"lineEnd":957,"scanPageStart":75,"scanPageEnd":75,"label":"所以不能制造依据","sourceType":"正文"},{"id":"e-new","text":"在形式逻辑中，“探寻新结果”“由已知进到未知”的方法，就是推理。","lineStart":964,"lineEnd":964,"scanPageStart":75,"scanPageEnd":75,"label":"推理的认识作用","sourceType":"正文"},{"id":"e-proof","text":"根据真实的前提合乎逻辑地推出真实的结论。","lineStart":968,"lineEnd":968,"scanPageStart":76,"scanPageEnd":76,"label":"推理的论证作用","sourceType":"正文"},{"id":"e-two","text":"一个正确的推理必须具备两个条件：第一，推理的前提是真实的；第二，推理过程是符合思维的规律、规则的，即推理的形式是正确的。","lineStart":984,"lineEnd":984,"scanPageStart":77,"scanPageEnd":77,"label":"两项要求","sourceType":"正文"},{"id":"e-notguaranteed","text":"如果在这两个条件中有一条不具备，那么结论就不一定是真实可靠的","lineStart":984,"lineEnd":984,"scanPageStart":77,"scanPageEnd":77,"label":"条件缺少时不保证真实","sourceType":"正文"},{"id":"e-combination","text":"一个正确的推理必须是前提真实和形式正确二者的结合。","lineStart":993,"lineEnd":993,"scanPageStart":78,"scanPageEnd":78,"label":"前提与形式结合","sourceType":"正文"},{"id":"e-boundary","text":"形式逻辑只是告诉我们：一个正确的推理应当遵守哪些规则，怎样才能保证推理形式正确，怎样提高某些推理的可律程度，避免产生逻辑错误。","lineStart":993,"lineEnd":993,"scanPageStart":78,"scanPageEnd":78,"label":"形式逻辑的任务与界限","sourceType":"正文"},{"id":"e-kinds","text":"间接推理又可以分成三类，即：演绎推理，归纳推理，类比推理。","lineStart":1000,"lineEnd":1000,"scanPageStart":78,"scanPageEnd":78,"label":"后续推理的三种类型","sourceType":"正文"}],"stages":[{"id":"premise","title":"前提与结论","mini":"前提与结论","summary":"一组判断之间须有推出关系。","tag":"阅读路径 · 前提与结论","explanation":"推理使用已有判断作为前提，由此得到结论。多个句子并列未必是在推理：还要看说话者是否以一部分判断为根据，推出另一判断。识别这种关系是分析的第一步，之后才检查根据够不够。","analogy":"“本馆只有甲乙两个阅览室；甲已关闭；乙已关闭；所以本馆所有阅览室都已关闭。”前三句提供根据，末句是结论；“甲已关闭，乙在二楼”只是两个状态的并列。","excerptIds":["e-inference","e-premise","e-sentence"],"prompt":"哪一句是根据，哪一句是由此推出的？"},{"id":"markers","title":"别只看所以","mini":"别只看所以","summary":"有无标志词都要检查关系。","tag":"阅读路径 · 别只看所以","explanation":"“因此”“所以”能提示推理，却不能凭空建立前提到结论的联系；缺少这些词也不妨碍一段话在实质上作推理。本讲用数量与质量的例子提醒，列出两种情况并不等于前者逻辑上必然推出后者。","analogy":"“甲室人多，所以乙室关闭”仅凭所给信息推不出来。即便两事恰巧同时发生，也还缺少联系它们的规则或事实根据。反之，“所有有效单都有编号。甲有效。甲有编号。”即使没写所以，仍可辨认推理。","excerptIds":["e-marker","e-invalidso"],"prompt":"我给出的是推出关系，还是仅仅两件事并列？"},{"id":"value","title":"认识与论证","mini":"认识与论证","summary":"从已有认识出发，使结论得到依据。","tag":"阅读路径 · 认识与论证","explanation":"本讲把推理作为从已知进到未知的认识方法，也作为论证工具。结论可以把一般认识具体化，或综合已知材料。但“提供新知识”不意味着可以凭形式创造事实材料；结论的根据仍要逐项核查。","analogy":"已知所有有效预约单都有编号，且甲单有效，就能把一般规则具体用于甲。读者原先未把这两个已知条件连在一起，推理帮助他看清甲应当具有的性质。","excerptIds":["e-new","e-proof","e-premise"],"prompt":"结论比已知判断多说明了什么，又依赖什么？"},{"id":"two-checks","title":"前提与形式","mini":"前提与形式","summary":"事实核对和形式检查缺一不可。","tag":"阅读路径 · 前提与形式","explanation":"本讲提出真实前提与正确形式两项要求。对这里的必然性演绎而言，两者具备才保证真实结论；缺一项时应说“不能保证”，不能误说结论必假。形式正确不证明前提真实，结论碰巧为真也不能倒过来证明形式有效。原书的具体历史判断按编者归属理解。","analogy":"“所有本馆图书都已归还；甲是本馆图书；所以甲已归还”形式可以成立，但第一前提仍须查记录。另如“所有有效单有编号；甲有编号；所以甲有效”，即使甲确实有效，这个倒推形式也没有得到保证。","excerptIds":["e-two","e-notguaranteed","e-combination","e-boundary"],"prompt":"我分别拿什么证明前提真实、形式正确？"},{"id":"types","title":"进入不同推理","mini":"进入不同推理","summary":"规则要随推理类型分开。","tag":"阅读路径 · 进入不同推理","explanation":"原书区分只有一个前提的直接推理与多个前提的间接推理，后续重点讨论间接推理中的演绎、归纳、类比。不同类型的保证程度不能混同：演绎考察是否必然推出，归纳和类比还需考察结论的可靠程度。后两类将在第九讲具体说明。","analogy":"检查预约系统规则，可以问“结论是否被规则保证”；从若干天的情况估计未来时，则要说明资料范围和可能的例外。两种任务不能共用“已经必然证明”的说法。","excerptIds":["e-kinds","e-boundary"],"prompt":"我是在要求必然推出，还是评估一种推测的可靠性？"}],"comparisons":[{"id":"premise-conclusion","title":"前提与结论","leftTitle":"前提","left":"作为推出根据的已有判断，可能有一个或多个。","rightTitle":"结论","right":"由前提推出的新判断，需要说明根据关系。","relation":"前提与结论是论证中的角色；同一个判断在另一段推理中可以承担不同角色。","excerptIds":["e-inference","e-premise"]},{"id":"truth-form","title":"前提真实与形式正确","leftTitle":"前提真实","left":"核对所说的情况是否符合实际。","rightTitle":"形式正确","right":"核对从这些前提到结论的结构是否遵守规则。","relation":"本讲要求二者结合；任一项缺失都只是不能保证结论，不能直接判结论必假。","excerptIds":["e-two","e-notguaranteed","e-combination","e-boundary"]}],"quiz":[{"id":"q-marker","question":"“甲室人多，所以乙室关闭。”只给这两项信息，哪种评价合适？","options":["所以一词足以证明两者有必然联系","只要结论碰巧真实，推出过程就正确","还缺少联系前提与结论的根据"],"answerIndex":2,"explanation":"推理要有前提到结论的关系；所以只是语言标志，不能自己提供联系两事的依据。","excerptIds":["e-premise","e-invalidso"]},{"id":"q-premise","question":"一个演绎推理形式正确，但前提尚未核实，可以断言什么？","options":["结论必真","形式正确仍不足以保证结论符合现实","结论必假"],"answerIndex":1,"explanation":"本讲要求前提真实和形式正确结合。前提未知时缺少现实真实性的保证，既不能由此判结论真，也不能判结论必假。","excerptIds":["e-two","e-notguaranteed","e-combination"]},{"id":"q-roles","question":"“甲有效，因为所有已确认且未取消的单都有效，而甲已确认且未取消。”其中“甲有效”扮演什么角色？","options":["结论","唯一前提","只有名称，没有判断"],"answerIndex":0,"explanation":"这句话把一般规则及甲的情况作为根据，用来推出甲有效；因此甲有效是该推理的结论，不依照它出现在句首就把它当作前提。","excerptIds":["e-premise","e-marker"]}]}</script>
+</body>
+</html>

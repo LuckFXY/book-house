@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <meta name="description" content="把论题、论据、论证方式分开，再检查证明方法、论题同一、依据真实性与推出关系，避免用篇幅或声势代替证明。">
+  <title>第十一讲·证明要有说服力 · 形式逻辑通俗讲话</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main-content">跳到正文</a>
+  <aside class="sidebar" aria-label="篇目与导览">
+    <a class="brand" href="#overview" aria-label="知行 · 精读首页"><span class="brand-mark" aria-hidden="true">知<span>行</span></span><span>知行<span class="brand-caption">一本书，一条思考的路</span></span></a>
+    <a class="library-link" href="./index.html">← 精读书库</a>
+    <div class="library-label"><span id="book-title">毛泽东选集</span> <span>精读</span></div>
+    <div class="book-entry"><span class="entry-num">01</span><span><span id="entry-title">实践论</span><small id="entry-label">首篇导读 · 已完成</small></span><span class="entry-dot" aria-hidden="true"></span></div>
+    <div id="upcoming" class="upcoming"></div>
+    <nav class="section-nav" aria-label="本文导览">
+      <span class="nav-label">本文导览</span>
+      <a href="#overview"><span>01</span> 从一个问题开始</a>
+      <a href="#route"><span>02</span> <span class="nav-text" id="route-nav">走一遍认识的路</span></a>
+      <a href="#concepts"><span>03</span> <span class="nav-text" id="concepts-nav">分清两组概念</span></a>
+      <a href="#sources"><span>04</span> 回到原文</a>
+      <a href="#exercise"><span>05</span> 检验你的理解</a>
+    </nav>
+    <div class="sidebar-foot"><span class="offline-dot" aria-hidden="true"></span>离线精读样板<span id="scope-note">本页仅完成《实践论》</span></div>
+  </aside>
+  <div class="page-shell">
+    <header class="topbar"><span>阅读，不止于读过。</span><span class="edition" id="edition-label">INTERACTIVE READING / 001</span></header>
+    <main id="main-content">
+      <section id="overview" class="hero" aria-labelledby="article-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="red-rule"></span>经典精读 <span class="subtle">/</span> <span id="article-subject">认识论</span></div>
+          <h1 id="article-title"><span id="hero-title">实践论</span><span class="title-dot">。</span></h1>
+          <p class="article-meta"><span id="article-author">毛泽东</span> <span>·</span> <span id="article-date"></span></p>
+          <p class="subtitle" id="article-subtitle"></p>
+          <h2 class="hero-question" id="core-question"></h2>
+          <p class="hero-intro" id="article-intro"></p>
+          <a class="primary-button" href="#route">开始走这条路 <span aria-hidden="true">↗</span></a>
+          <span class="hero-hint" id="hero-hint">5 个阶段 · 原文对照 · 3 道练习</span>
+        </div>
+        <div class="hero-art" id="hero-art" role="img" aria-label="知与行相互推动：从实践到认识，再由认识返回实践">
+          <svg viewBox="0 0 390 360" aria-hidden="true">
+            <defs><marker id="arrow-ink" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#1c3f8b" stroke-width="1.4"/></marker><marker id="arrow-red" markerWidth="8" markerHeight="8" refX="6" refY="4" orient="auto"><path d="M1 1 6 4 1 7" fill="none" stroke="#a83d2e" stroke-width="1.4"/></marker></defs>
+            <circle cx="195" cy="175" r="137" fill="none" stroke="#dfdbcf" stroke-dasharray="2 7"/>
+            <circle cx="195" cy="175" r="100" fill="none" stroke="#e5e1d7"/>
+            <path d="M77 130C100 51 246 34 307 127" fill="none" stroke="#1c3f8b" stroke-width="1.6" marker-end="url(#arrow-ink)"/>
+            <path d="M313 215C269 300 131 303 79 221" fill="none" stroke="#a83d2e" stroke-width="1.6" marker-end="url(#arrow-red)"/>
+            <path d="M41 175H349M195 22V328" stroke="#e4e0d6" stroke-width="1"/>
+            <circle cx="77" cy="175" r="4" fill="#a83d2e"/><circle cx="313" cy="175" r="4" fill="#1c3f8b"/>
+            <text x="115" y="200" class="art-character">行</text><text x="217" y="200" class="art-character art-know">知</text>
+            <text x="195" y="35" text-anchor="middle" class="art-note">从 实 践 中 来</text><text x="195" y="330" text-anchor="middle" class="art-note">到 实 践 中 去</text>
+            <text x="195" y="245" text-anchor="middle" class="art-small">认识的运动，永不止步</text>
+          </svg>
+          <span class="art-caption">读懂一个循环，也读懂一次深化。</span>
+        </div>
+      </section>
+      <details class="background-note"><summary><span class="note-symbol" aria-hidden="true">i</span><span id="background-title">为什么写这篇文章？</span><span class="detail-hint">展开写作背景与阅读说明</span></summary><div class="background-body"><p class="content-label" id="background-label">编辑导读 · 背景据本书题解</p><p id="article-background"></p><div id="background-refs" class="source-links"></div></div></details>
+      <section id="core-visual" class="core-visual" aria-labelledby="visual-title" hidden></section>
+      <section id="route" class="route-section" aria-labelledby="route-title">
+        <div class="section-heading"><div><span class="section-kicker">01 / THE READING PATH</span><h2 id="route-title">走一遍，认识的路。</h2></div><span class="section-aside">点击节点，展开一步</span></div>
+        <p class="section-intro" id="route-intro">认识如何从实践中发生，又怎样回到实践？<br class="desktop-break">沿着下面五个节点，跟随一个连续的现代类比来理解。</p>
+        <div class="argument-map">
+          <div class="map-annotation" id="map-annotation"><span>从世界中获得认识</span><span>让认识回到世界</span></div>
+          <div id="stage-tabs" class="stage-tabs" role="tablist" aria-label="认识的五个阅读阶段"></div>
+          <div class="map-return" id="map-return"><svg viewBox="0 0 800 28" preserveAspectRatio="none" aria-hidden="true"><path d="M786 1V17H14V1" fill="none" stroke="currentColor" stroke-width="1"/><path d="M9 7 14 1 19 7" fill="none" stroke="currentColor" stroke-width="1"/></svg><span>新的实践，带来更深的认识</span></div>
+        </div>
+        <p class="editorial-note" id="editorial-note"></p>
+        <div class="stage-layout">
+          <div id="stage-panel" class="stage-panel" role="tabpanel" tabindex="0" aria-labelledby="stage-tab-0">
+            <div class="stage-topline"><span id="stage-tag" class="content-label"></span><span id="stage-count" class="stage-count"></span></div>
+            <h3 id="stage-summary"></h3>
+            <p id="stage-explanation" class="explanation"></p>
+            <div class="analogy-block"><span class="content-label" id="analogy-label">现代类比 · 改善图书馆借阅体验</span><p id="stage-analogy"></p></div>
+            <div class="thinking-prompt"><span aria-hidden="true">↳</span><span id="stage-prompt"></span></div>
+            <div class="stage-controls"><button id="previous-stage" type="button">← 上一步</button><span>也可用方向键切换节点</span><button id="next-stage" type="button">下一步 →</button></div>
+          </div>
+          <aside class="current-sources" aria-labelledby="current-source-title"><div class="quote-heading"><span class="quote-mark" aria-hidden="true">“</span><div><span class="content-label">原文对照</span><h3 id="current-source-title">让解释有据可循</h3></div></div><div id="stage-excerpts"></div><p class="quote-footnote" id="quote-footnote">以下为本地 OCR 原文；疑似识别错误未作改写。</p></aside>
+        </div>
+        <p id="stage-announcement" class="visually-hidden" aria-live="polite" aria-atomic="true"></p>
+      </section>
+      <section id="concepts" class="concept-section" aria-labelledby="concepts-title"><div class="section-heading"><div><span class="section-kicker">02 / THINK IN RELATIONS</span><h2 id="concepts-title">别把相连的，读成对立的。</h2></div></div><div id="comparison-list"></div></section>
+      <section id="sources" class="sources-section" aria-labelledby="sources-title"><div class="section-heading"><div><span class="section-kicker">03 / BACK TO THE TEXT</span><h2 id="sources-title">解释之外，回到原文。</h2></div><span class="source-total" id="source-total"></span></div><p class="section-intro" id="sources-intro">引文只是精读的入口。每一条都保留了可以回查的文件行号与扫描页。</p><div class="source-notice"><p id="version-note"></p><p class="source-file">来源：<span id="source-name"></span><span id="source-location-note"> · 《实践论》标题第 3386 行，扫描页 283</span></p></div><details id="source-library" class="source-library"><summary><span id="source-library-label"></span><span aria-hidden="true">＋</span></summary><ol id="excerpt-list" class="excerpt-list"></ol></details></section>
+      <section id="exercise" class="exercise-section" aria-labelledby="exercise-title"><div class="section-heading"><div><span class="section-kicker">04 / MAKE IT YOUR OWN</span><h2 id="exercise-title">把“读过”变成“理解”。</h2></div><span class="section-aside" id="exercise-count">3 道情境判断</span></div><p class="section-intro" id="exercise-intro">回看图书馆的例子，试着分清认识过程中的不同环节。<br class="desktop-break">答错也有用：每道题都会给出解释与原文依据。</p><form id="quiz-form" novalidate><div id="quiz-questions"></div><div class="quiz-actions"><button type="submit" id="quiz-submit" class="primary-button">提交，看看理解到哪一步 <span aria-hidden="true">↗</span></button><button type="button" id="quiz-reset" class="text-button">重置练习</button></div><div id="quiz-status" class="quiz-status" role="status" aria-live="polite" aria-atomic="true"></div></form></section>
+      <footer class="page-footer"><div class="footer-line"><span id="footer-from">从实践中来</span><span class="footer-arrow" aria-hidden="true">↗</span><span id="footer-to">再向实践中去</span></div><p><span id="footer-title">《实践论》交互精读样板</span> <span>·</span> 引文 / 编辑解释 / 现代类比分层呈现</p><a href="#overview">回到开篇 ↑</a></footer>
+    </main>
+  </div>
+  <noscript><p class="noscript-notice">交互精读需要启用 JavaScript。所有脚本均在本地，无需联网；原始内容可在 data/logic-11.json 中阅读。</p></noscript>
+  <script id="book-data" type="application/json">{"book":{"id":"formal-logic-1976","title":"形式逻辑通俗讲话","author":"北京市建筑木材厂《形式逻辑通俗讲话》编写组、北京师范大学政治教育系","source":{"file":"形式逻辑通俗讲话1976.txt","sha256":"55ebaa5c14af3414d9f3635ef2c9bfd380a885d145503d8f78dc5efb63a42054","kind":"txt-scan-markers"},"upcoming":[]},"article":{"id":"logic-11","title":"第十一讲·证明要有说服力","date":"1976 年 1 月版","subtitle":"《形式逻辑通俗讲话》第十一讲 · 完整单元","question":"材料真实，为什么论题仍可能没有被证明？","intro":"把论题、论据、论证方式分开，再检查证明方法、论题同一、依据真实性与推出关系，避免用篇幅或声势代替证明。","background":"本页拆解北京市建筑木材厂《形式逻辑通俗讲话》编写组、北京师范大学政治教育系合编的1976年教材。原书的政治判断、历史评价与科学举例按作者当时的论述呈现；编辑解释和现代设例独立标识，不把这些例子当作今天的事实判定。","backgroundExcerptIds":["e-proof"],"versionNote":"引文逐字保留本地 OCR 文本，未作扫描图逐字校勘。出处为原 TXT 行号及最近的“第×页”文本标记；文本扫描页标记不等于纸书印刷页或 PDF 页序。","editorialNote":"六节点和三环节表为编辑整理。原书的历史政治论题、论据及其真实性评价依原书归属阅读，不代替独立史实核验。现代设例的系统规则均为约定；归纳支持与演绎保证分别注明条件，不能由证明失败直接断定论题为假。","sourceRange":{"lineStart":1727,"lineEnd":1886},"presentation":{"subject":"形式逻辑","editionLabel":"LOGIC / 11","entryLabel":"第十一讲 · 完整单元","scopeNote":"本书共 12 讲；单元交付状态见书库","heroTitle":"证明要有说服力","heroCaption":"证明三环节 → 证明与推理 → 归纳证明 → 演绎证明 → 论题与论据 → 检查能否推出","routeTitle":"材料真实，为什么论题仍可能没有被证明？","routeIntro":"把论题、论据、论证方式分开，再检查证明方法、论题同一、依据真实性与推出关系，避免用篇幅或声势代替证明。 点击节点，结合现代设例和原文阅读。","routeAriaLabel":"第十一讲的6个阅读节点","analogyLabel":"现代设例 · 约定条件下的教学例子","backgroundTitle":"这本教材怎样提出问题？","backgroundLabel":"编辑导读 · 本书的编写语境","sourcesIntro":"以下精选原文覆盖第十一讲，定位到原始 TXT 行号与文本扫描页。","sourceLocationNote":"第十一讲第 1727–1886 行；版次见原文件第 16 行","quoteFootnote":"以下为本地 OCR TXT 原文；文本扫描页不是 PDF 或纸书页码，疑似误字未作改写。","exerciseIntro":"根据本讲规则判断现代设例，并回到引用原文核对依据。","footerFrom":"读清概念与规则","footerTo":"说出判断与理由","mapGroups":[{"label":"第十一讲 · 完整阅读路径","span":6}],"returnLabel":null},"visual":{"title":"证明的三个环节与三项检查","caption":"编辑依据本讲整理；现代设例采用明示约定，不是原书表格。","columns":["环节","回答什么","需要检查"],"rows":[["论题","证明什么","明确，保持同一"],["论据","用什么证明","真实，独立于待证论题"],["论证方式","如何证明","能否由这些根据推出论题"]],"excerptIds":["e-thesis","e-evidence","e-method","e-thesiscare","e-evidencetrue","e-circular","e-follow"]}},"excerpts":[{"id":"e-proof","text":"这种证明就是用一个或几个真实的判断作为根据，通过推理，来确立某一判断的真实性。","lineStart":1733,"lineEnd":1733,"scanPageStart":136,"scanPageEnd":136,"label":"逻辑证明的任务","sourceType":"正文"},{"id":"e-thesis","text":"论题是真实性需要加以确立的那个判断。它回答“证明什么”的问题。","lineStart":1741,"lineEnd":1741,"scanPageStart":137,"scanPageEnd":137,"label":"论题","sourceType":"正文"},{"id":"e-evidence","text":"论据是确立论题的真实性所依据的那些判断。它回答“用什么来证明”的问题。","lineStart":1742,"lineEnd":1742,"scanPageStart":137,"scanPageEnd":137,"label":"论据","sourceType":"正文"},{"id":"e-method","text":"论证方式是论据和论题之间的联系方式，也就是由论据证明论题时运用了什么样的推理形式。它回答“如何证明”的问题。","lineStart":1743,"lineEnd":1743,"scanPageStart":137,"scanPageEnd":137,"label":"论证方式","sourceType":"正文"},{"id":"e-process","text":"推理是由已有的判断推出新判断，即由前提出发，根据前提得出结论。而证明是先有论题，然后为论题找论据，来确立论题的真实性","lineStart":1755,"lineEnd":1755,"scanPageStart":138,"scanPageEnd":138,"label":"证明与推理的活动方向","sourceType":"正文"},{"id":"e-multiple","text":"证明虽然可以只由一个推理构成，但经常是由几个推理构成的。","lineStart":1756,"lineEnd":1756,"scanPageStart":138,"scanPageEnd":138,"label":"证明可以有多个推理","sourceType":"正文"},{"id":"e-example","text":"可以用例证法，就是列举出有代表性的典型事例作为论据，来证明一个一般性的道理。","lineStart":1781,"lineEnd":1781,"scanPageStart":140,"scanPageEnd":140,"label":"例证属于归纳证明","sourceType":"正文"},{"id":"e-contrast","text":"对比法来进行证明，就是列举两个具有不同（或相反）情况的事物，加以对照比较，以对比的结果来证明一般性的道理。","lineStart":1790,"lineEnd":1790,"scanPageStart":141,"scanPageEnd":141,"label":"对比属于归纳证明","sourceType":"正文"},{"id":"e-deductive","text":"用一般原理、原则作为论据，运用演绎推理的形式","lineStart":1799,"lineEnd":1799,"scanPageStart":142,"scanPageEnd":142,"label":"演绎证明的基本思路","sourceType":"正文"},{"id":"e-elimination","text":"先列出论题存在的各种可能情况，然后排除其他可能，证明只有论题中的一种可能是真实的。","lineStart":1811,"lineEnd":1811,"scanPageStart":143,"scanPageEnd":143,"label":"选言证法","sourceType":"正文"},{"id":"e-reductio","text":"先设立一个与要证明的论题相矛盾的反论题，构成一个不相容的选言判断，然后用一个假言推理证明反论题是假的，再根据不相容选言推理的规则，确定原来要证明的论题是真实的。","lineStart":1820,"lineEnd":1820,"scanPageStart":144,"scanPageEnd":144,"label":"反证法的结构","sourceType":"正文"},{"id":"e-thesiscare","text":"论题必须明确并保持同一。","lineStart":1831,"lineEnd":1831,"scanPageStart":145,"scanPageEnd":145,"label":"论题的规则","sourceType":"正文"},{"id":"e-evidencetrue","text":"论据必须真实。","lineStart":1850,"lineEnd":1850,"scanPageStart":147,"scanPageEnd":147,"label":"论据的规则","sourceType":"正文"},{"id":"e-circular","text":"论题靠论据来证明，论据又要靠论题来证明，这样一来，等于没有证明。","lineStart":1864,"lineEnd":1864,"scanPageStart":148,"scanPageEnd":148,"label":"循环论证","sourceType":"正文"},{"id":"e-follow","text":"从论据必须能推出论题。","lineStart":1867,"lineEnd":1867,"scanPageStart":148,"scanPageEnd":148,"label":"推出关系的规则","sourceType":"正文"},{"id":"e-irrelevant","text":"“推不出”的错误还表现为，论据与论题不相干，即论据与论题之间没有必然联系。","lineStart":1877,"lineEnd":1877,"scanPageStart":149,"scanPageEnd":149,"label":"不相干的论据","sourceType":"正文"},{"id":"e-insufficient","text":"论据不充分或有片面性，也是“推不出”的一种表现。在归纳证明中，这类错误常常表现为“以偏概全”。","lineStart":1878,"lineEnd":1878,"scanPageStart":149,"scanPageEnd":149,"label":"资料不充分","sourceType":"正文"}],"stages":[{"id":"three-parts","title":"证明三环节","mini":"证明三环节","summary":"先写清证明什么、用什么、如何证明。","tag":"阅读路径 · 证明三环节","explanation":"论题是待确立真实性的判断，论据是支持它的判断，论证方式把两者通过推理联系起来。三者缺一，材料可能只是堆积，或只是重复主张。论据的真实性和充分性，以及连接它们的形式，都需要分别检查。","analogy":"论题：“乙单无效”。论据：“所有有效单都已确认；乙单尚未确认”。方式：由规则和乙的状态作否定后件推理。三个环节可分别写出，便于发现哪一步仍欠根据。","excerptIds":["e-proof","e-thesis","e-evidence","e-method"],"prompt":"我能把三个环节各写成一句话吗？"},{"id":"proof-inference","title":"证明与推理","mini":"证明与推理","summary":"证明围绕待证论题组织一个或多个推理。","tag":"阅读路径 · 证明与推理","explanation":"推理从已有前提到结论；证明则先明确待证明的论题，再寻找足以确立它的根据，一个证明也可能包含多层推理。先有论题并不准许只挑支持材料：若找不到真实、充分且相关的根据，应承认证明未成，或修改原来的主张。","analogy":"想证明“所有预约处理都及时”，必须查清“及时”的标准和全部或适当资料，不能先宣布成功，再只抽出三张顺利处理的单据。每个中间结论还可能需要自己的支持。","excerptIds":["e-process","e-multiple","e-evidence","e-insufficient"],"prompt":"哪个论据本身仍需要进一步证明？"},{"id":"inductive","title":"归纳证明","mini":"归纳证明","summary":"摆事实也要检查范围与代表性。","tag":"阅读路径 · 归纳证明","explanation":"本讲把通过特殊事实支持一般道理的办法归入归纳证明，并介绍例证法和对比法。典型事例和对比可以帮助说明，但不能凭“典型”二字就保证全称结论，也不能让一次前后对比自动确立单一因果。应让结论强度与材料范围相称。原书政治例证的可靠性评价属于编者当时的论述。","analogy":"两位读者使用新指引很顺利，可以说明“新指引在这些情况中有帮助”；若要证明“所有读者都不再遇到困难”，还需要更广资料。对比前后等待时间，也需核对人员、设备等是否同时改变。","excerptIds":["e-example","e-contrast","e-insufficient"],"prompt":"例子证明的是这一情况，还是足以支撑所声称的一般范围？"},{"id":"deductive","title":"演绎证明","mini":"演绎证明","summary":"用规则、排除或反论题检查推出关系。","tag":"阅读路径 · 演绎证明","explanation":"本讲介绍三段论证法、假言证法、选言证法和反证法。无论哪种，都要核对规则及前提。选言证法须穷尽可能后排除；反证法则暂设与论题真正矛盾的反论题，由它推至已知不可能或相互矛盾的结果，才能否定反论题，不能只说“我不喜欢这个结果”。","analogy":"要证乙单无效：暂设乙单有效；按已核实规则，有效必已确认；但乙单未确认，与此前提冲突，于是否定有效。若“有效必确认”本身未核实，这个反证就还没有完成。","excerptIds":["e-deductive","e-elimination","e-reductio","e-method"],"prompt":"反论题真是论题的否定吗？矛盾依赖哪些真实前提？"},{"id":"same-and-true","title":"论题与论据","mini":"论题与论据","summary":"保持同一，依据独立且真实。","tag":"阅读路径 · 论题与论据","explanation":"论题要明确并贯穿整个证明，不能把较强的原主张换成容易支持的较弱主张。论据要有独立的真实性根据，不能把待证论题换几个词放回论据，再反过来用论题支持它；这是循环论证，并未增加证明力。","analogy":"原论题是“所有单都及时处理”，后来只证明“有些单处理过”，就换了论题。“这份清单可靠，因为它记的都对；它记的都对，因为清单可靠”则在同一主张间绕圈，尚未核查原始记录。","excerptIds":["e-thesiscare","e-evidencetrue","e-circular"],"prompt":"我有没有改换目标，或用结论给自己的依据作担保？"},{"id":"connection","title":"检查能否推出","mini":"检查能否推出","summary":"材料真实，也要相关而且充分。","tag":"阅读路径 · 检查能否推出","explanation":"“推不出”包括违反推理规则、论据不相干、依据不充分或片面。即使论据是真的，也不等于它支持当前论题；修复时须补真正的根据或收窄结论。证明失败只说明这项论证尚未确立论题，不自动说明论题必假。","analogy":"“甲单编号很整齐，所以全部单据都及时处理”中，编号整齐即使属实也不支持及时性；“五张都及时，所以所有单都及时”则还缺范围保证。应核对所需时间记录并调整可支持的结论。","excerptIds":["e-follow","e-irrelevant","e-insufficient"],"prompt":"从这些根据到这个强度的结论，中间还缺什么？"}],"comparisons":[{"id":"proof-inference","title":"推理与证明","leftTitle":"推理","left":"从已有前提推出结论。","rightTitle":"证明","right":"围绕待确立的论题组织论据和一个或多个推理。","relation":"证明离不开推理，但目的和组织过程不同；待证论题不能自行担任真实依据。","excerptIds":["e-process","e-multiple","e-circular"]},{"id":"inductive-deductive","title":"归纳证明与演绎证明","leftTitle":"归纳证明","left":"用具体事实、典型例子、对比支持一般主张；须查代表性与资料范围。","rightTitle":"演绎证明","right":"用一般原理、条件或穷尽选项等，经有效形式推出论题。","relation":"不同方法的保证条件不同，不能把一个有启发性的例子说成已必然证明无例外的一般结论。","excerptIds":["e-example","e-contrast","e-deductive","e-insufficient"]},{"id":"false-circular","title":"虚假依据与循环论证","leftTitle":"虚假依据","left":"拿不真实的判断当根据，不能建立真实性。","rightTitle":"循环论证","right":"根据的真实性又依赖待证论题，未提供独立支持。","relation":"两者都需重新核对论据；即使依据通过这项检查，还要继续检查能否推出论题。","excerptIds":["e-evidencetrue","e-circular","e-follow"]}],"quiz":[{"id":"q-parts","question":"要证明“乙单无效”，引用“有效单都已确认；乙尚未确认”。“乙单无效”在该证明中是什么？","options":["论据","论题","论证方式"],"answerIndex":1,"explanation":"乙单无效是需要确立真实性的判断，即回答证明什么；两条引用判断是论据，连接它们的推理才是论证方式。","excerptIds":["e-thesis","e-evidence","e-method"]},{"id":"q-circle","question":"“清单可靠，因为它记的都对；它记的都对，因为清单可靠。”主要问题是什么？","options":["循环论证，没有独立确立依据","只要说了两遍就证明充分","论题非常明确，所以依据无需核实"],"answerIndex":0,"explanation":"两个近似主张互相担保，没有提供独立记录或检验来说明真实性，符合本讲对循环论证的描述。","excerptIds":["e-circular"]},{"id":"q-failed","question":"用五张及时处理记录证明全部单据都及时，但没有说明这五张穷尽范围。应如何评价？","options":["已经必然证明全称论题","因此全称论题必定为假","这项根据还不足以确立全称论题，应查更多资料或收窄结论"],"answerIndex":2,"explanation":"部分事实不能自动保证全部，无穷尽或其他充分根据时，证明不足。证明不足与论题已被证明为假是两回事。","excerptIds":["e-insufficient","e-follow"]}]}</script>
+</body>
+</html>
