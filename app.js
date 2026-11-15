@@ -12,6 +12,10 @@
     return node;
   };
   const location = item => `${data.book.source.kind === 'txt-scan-markers' ? '文本扫描页' : '扫描页'} ${item.scanPageStart}${item.scanPageEnd !== item.scanPageStart ? `–${item.scanPageEnd}` : ''} · 第 ${item.lineStart}${item.lineEnd !== item.lineStart ? `–${item.lineEnd}` : ''} 行`;
+  const ocrURL = item => {
+    const ref = `${window.location.pathname.split('/').pop() || 'index.html'}#excerpt-${item.id}`;
+    return `./source.html#${new URLSearchParams({ book: data.sourceBrowser.bookId, from: item.lineStart, to: item.lineEnd, ref })}`;
+  };
   const sourceLink = id => {
     const item = excerpts.get(id);
     const a = element('a', 'source-link', `${item.label} ↗`);
@@ -28,10 +32,13 @@
     const block = element('figure', 'source-quote');
     block.append(element('figcaption', 'excerpt-label', item.label));
     block.append(element('blockquote', '', item.text));
-    const a = element('a', 'quote-location', `${location(item)} ↗`);
-    a.href = `#excerpt-${item.id}`;
-    a.dataset.excerptId = item.id;
-    block.append(a);
+    const a = element('a', 'quote-location', `OCR 原文 · ${location(item)} ↗`);
+    if (data.sourceBrowser) {
+      a.href = ocrURL(item); a.classList.add('ocr-source-link');
+      block.append(a, sourceLink(item.id));
+    } else {
+      a.href = `#excerpt-${item.id}`; a.dataset.excerptId = item.id; block.append(a);
+    }
     return block;
   };
   setText('article-date', data.article.date);
@@ -185,7 +192,14 @@
     li.tabIndex = -1;
     const header = element('div', 'excerpt-item-head');
     header.append(element('span', 'excerpt-index', String(index + 1).padStart(2, '0')), element('h3', '', item.label));
-    li.append(header, element('blockquote', '', item.text), element('p', 'excerpt-source', `${item.sourceType} · OCR 原文 · ${location(item)}`));
+    const source = element(data.sourceBrowser ? 'a' : 'p', 'excerpt-source', `${item.sourceType} · OCR 原文 · ${location(item)}`);
+    if (data.sourceBrowser) { source.href = ocrURL(item); source.classList.add('ocr-source-link'); }
+    li.append(header, element('blockquote', '', item.text), source);
+    if (data.readerExcerptIds?.includes(item.id)) {
+      const readerLink = element('a', 'reader-excerpt-link', '在全文中看 ↗');
+      readerLink.href = `./practice-reader.html#q-${item.id}`;
+      li.append(readerLink);
+    }
     $('excerpt-list').append(li);
   });
   function revealExcerpt(id) {

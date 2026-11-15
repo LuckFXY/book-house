@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f6f4ee">
+  <title>原文浏览器 · 知行</title>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./source.js" defer></script>
+</head>
+<body class="source-page">
+  <a class="skip-link" href="#source-lines">跳到原文</a>
+  <header class="source-header">
+    <a href="./index.html">← 精读书库</a><h1>原文浏览器</h1>
+    <p>文本扫描页 ≠ 纸书页码；OCR 未逐字校勘。疑似识别错误保留原样。</p>
+    <div class="source-toolbar">
+      <label>原书 <select id="source-book"></select></label>
+      <form id="line-jump"><label>跳到行 <input id="line-number" type="number" min="1" required></label><button>前往</button></form>
+      <form id="page-jump"><label>跳到扫描页 <input id="scan-page" type="number" min="1" required></label><button>前往</button></form>
+    </div>
+    <p id="source-status" role="status"></p>
+  </header>
+  <div class="source-context">
+    <div id="source-ref" hidden><span id="source-ref-label"></span> <a id="source-return">← 返回精读</a></div>
+    <button id="source-tools" type="button">跳转工具 ↑</button>
+  </div>
+  <main class="source-main">
+    <button id="load-before" type="button" disabled>加载上文</button>
+    <div id="source-lines" tabindex="-1" aria-label="OCR 原书，按行显示"></div>
+    <button id="load-after" type="button" disabled>加载下文</button>
+  </main>
+  <dialog id="source-references" aria-labelledby="references-title"><button id="close-references" type="button">关闭 ×</button><h2 id="references-title">引用这一行的精读</h2><div id="reference-list"></div></dialog>
+  <noscript>原文浏览器需要启用 JavaScript。保留 sources 目录即可离线阅读。</noscript>
+  <script id="source-books" type="application/json">[{"bookId":"mao-selected","title":"毛泽东选集"},{"bookId":"formal-logic-1976","title":"形式逻辑通俗讲话（1976）"},{"bookId":"family-origin","title":"家庭、私有制和国家的起源"}]</script>
+</body>
+</html>
