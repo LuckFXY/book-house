@@ -13,17 +13,20 @@
   <header class="source-header">
     <a href="./index.html">← 精读书库</a><h1>原文浏览器</h1>
     <p>文本扫描页 ≠ 纸书页码；OCR 未逐字校勘。疑似识别错误保留原样。</p>
-    <div class="source-toolbar">
+    <details id="source-drawer" open><summary>跳转工具</summary><div class="source-toolbar">
       <label>原书 <select id="source-book"></select></label>
       <form id="line-jump"><label>跳到行 <input id="line-number" type="number" min="1" required></label><button>前往</button></form>
       <form id="page-jump"><label>跳到扫描页 <input id="scan-page" type="number" min="1" required></label><button>前往</button></form>
     </div>
+    <section id="bookmark-panel" aria-labelledby="bookmark-title"><h2 id="bookmark-title">书签</h2><div id="bookmark-list"></div></section></details>
+    <p id="storage-note" class="reader-muted" hidden>此浏览器无法保存书签</p>
     <p id="source-status" role="status"></p>
   </header>
   <div class="source-context">
     <div id="source-ref" hidden><span id="source-ref-label"></span> <a id="source-return">← 返回精读</a></div>
-    <label><input id="source-raw" type="checkbox"> 显示原始行</label><button id="source-tools" type="button">跳转工具 ↑</button>
+    <button id="bookmark-current" type="button">加书签</button><label><input id="source-raw" type="checkbox"> 显示原始行</label><button id="source-tools" type="button">跳转工具 ↑</button>
   </div>
+  <div id="source-resume" hidden><span id="resume-label"></span><button id="resume-start" type="button">从头开始</button><button id="resume-dismiss" type="button" aria-label="关闭阅读位置提示">×</button></div>
   <main class="source-main">
     <button id="load-before" type="button" disabled>加载上文</button>
     <div id="source-lines" tabindex="-1" aria-label="OCR 原书，按行显示"></div>
