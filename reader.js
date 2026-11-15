@@ -1,6 +1,6 @@
 'use strict';
 (() => {
-  const { fulltext, guide, ocr } = JSON.parse(document.getElementById('reader-data').textContent);
+  const { fulltext, guide, ocr, questions } = JSON.parse(document.getElementById('reader-data').textContent);
   const $ = id => document.getElementById(id);
   const node = (tag, text, className) => {
     const el = document.createElement(tag);
@@ -10,6 +10,11 @@
   };
   const link = (text, id) => { const el = node('a', text); el.href = `#${id}`; return el; };
   const button = (text, action) => { const el = node('button', text); el.type = 'button'; el.addEventListener('click', action); return el; };
+  const returningQuestion = new URLSearchParams(location.search).get('question');
+  if(questions?.ids.includes(returningQuestion)) {
+    const back=node('a','← 返回练习题');back.id='reader-question-return';back.href=`./${questions.filename}#q=${returningQuestion}`;
+    document.querySelector('.reader-header nav').append(back);
+  }
   const knowledge = new Map(guide.knowledge.map(item => [item.id, item]));
   const glossary = new Map(guide.glossary.map(item => [item.id, item]));
   const anchorId = (id, index) => `a-${id}-${index}`;
@@ -364,6 +369,8 @@
     const terms = node('div', undefined, 'reader-links');
     item.glossary.forEach(id => terms.append(link(glossary.get(id).term, id))); card.append(terms);
     const anchors = node('div', undefined, 'reader-links');
+    const questionCount=questions?.knowledgeCounts[item.id]??0;
+    if(questionCount){const exercises=node('a',`相关练习 (${questionCount})`);exercises.className='knowledge-questions';exercises.href=`./${questions.filename}#k=${item.id}`;card.append(exercises);}
     item.anchors.forEach((anchor, index) => anchors.append(link(`看原文 · ${anchor.para}（${index + 1}）`, anchorId(item.id, index)))); card.append(anchors);
     const quiz = node('fieldset'); quiz.append(node('legend', item.check.question));
     const feedback = node('p'); feedback.setAttribute('role', 'status');
